@@ -385,6 +385,17 @@ footer {
     .form-grid-2 {
         grid-template-columns: 1fr 1fr;
     }
+
+    /* Contact Page Layout */
+    .contact-map,
+    .contact-form {
+        grid-column: span 4;
+    }
+
+    .contact-info,
+    .opening-hours-card {
+        grid-column: span 2;
+    }
 }
 
 /* Accessibility & Focus */
@@ -477,7 +488,7 @@ table {
 
 .opening-hours-table td {
     font-size: 1rem;
-    padding: 0.75rem 0 !important;
+    padding: 0.75rem 0.5rem !important;
 }
 
 .opening-hours-card {
