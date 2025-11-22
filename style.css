@@ -414,7 +414,7 @@ footer {
 
 /* Breadcrumbs */
 .breadcrumbs {
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-md);
     background-color: #f0f0f0;
     margin-bottom: var(--spacing-lg);
     border-bottom: 1px solid #e0e0e0;
