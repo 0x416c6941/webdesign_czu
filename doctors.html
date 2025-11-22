@@ -49,77 +49,79 @@
         <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem;">
             
             <!-- Card 1 -->
-            <article style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+            <article class="doctor-card">
                 <img src="https://placehold.co/400x250/eef/333?text=MUDr.+Novak" alt="MUDr. Jan Novák">
-                <div style="padding: 1.5rem; flex-grow: 1;">
+                <div class="doctor-card-content">
                     <h2>MUDr. Jan Novák</h2>
-                    <p style="color: var(--color-primary); font-weight: bold;">Kardiologie</p>
+                    <p class="doctor-card-specialty">Kardiologie</p>
                     <p>Specialista na srdeční arytmie s 15 lety praxe.</p>
                 </div>
-                <div style="padding: 1rem; background: #f9f9f9; border-top: 1px solid #eee;">
-                    <a href="detail.html" style="font-weight: bold;">Zobrazit profil &rarr;</a>
+                <div class="doctor-card-footer">
+                    <a href="detail.html" class="doctor-card-link">Zobrazit profil &rarr;</a>
                 </div>
             </article>
 
             <!-- Card 2 -->
-            <article style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+            <article class="doctor-card">
                 <img src="https://placehold.co/400x250/eef/333?text=MUDr.+Svobodova" alt="MUDr. Eva Svobodová">
-                <div style="padding: 1.5rem; flex-grow: 1;">
+                <div class="doctor-card-content">
                     <h2>MUDr. Eva Svobodová</h2>
-                    <p style="color: var(--color-primary); font-weight: bold;">Neurologie</p>
+                    <p class="doctor-card-specialty">Neurologie</p>
                     <p>Vedoucí lékařka neurologického oddělení.</p>
                 </div>
-                <div style="padding: 1rem; background: #f9f9f9; border-top: 1px solid #eee;">
-                    <a href="detail.html" style="font-weight: bold;">Zobrazit profil &rarr;</a>
+                <div class="doctor-card-footer">
+                    <a href="detail.html" class="doctor-card-link">Zobrazit profil &rarr;</a>
                 </div>
             </article>
 
             <!-- Card 3 -->
-            <article style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+            <article class="doctor-card">
                 <img src="https://placehold.co/400x250/eef/333?text=MUDr.+Dvorak" alt="MUDr. Petr Dvořák">
-                <div style="padding: 1.5rem; flex-grow: 1;">
+                <div class="doctor-card-content">
                     <h2>MUDr. Petr Dvořák</h2>
-                    <p style="color: var(--color-primary); font-weight: bold;">Ortopedie</p>
+                    <p class="doctor-card-specialty">Ortopedie</p>
                     <p>Expert na sportovní zranění a kloubní náhrady.</p>
                 </div>
-                <div style="padding: 1rem; background: #f9f9f9; border-top: 1px solid #eee;">
-                    <a href="detail.html" style="font-weight: bold;">Zobrazit profil &rarr;</a>
+                <div class="doctor-card-footer">
+                    <a href="detail.html" class="doctor-card-link">Zobrazit profil &rarr;</a>
                 </div>
             </article>
 
         </div>
 
         <h2>Seznam oddělení</h2>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
-            <thead style="background: var(--color-primary); color: white;">
-                <tr>
-                    <th style="padding: 1rem; text-align: left;">Oddělení</th>
-                    <th style="padding: 1rem; text-align: left;">Vedoucí lékař</th>
-                    <th style="padding: 1rem; text-align: left;">Telefon</th>
-                    <th style="padding: 1rem; text-align: left;">Umístění</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 1rem;">Kardiologie</td>
-                    <td style="padding: 1rem;">MUDr. Jan Novák</td>
-                    <td style="padding: 1rem;">123 456 789</td>
-                    <td style="padding: 1rem;">Budova A, 2. patro</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
-                    <td style="padding: 1rem;">Neurologie</td>
-                    <td style="padding: 1rem;">MUDr. Eva Svobodová</td>
-                    <td style="padding: 1rem;">123 456 790</td>
-                    <td style="padding: 1rem;">Budova B, 1. patro</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 1rem;">Ortopedie</td>
-                    <td style="padding: 1rem;">MUDr. Petr Dvořák</td>
-                    <td style="padding: 1rem;">123 456 791</td>
-                    <td style="padding: 1rem;">Budova A, Přízemí</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                <thead style="background: var(--color-primary); color: white;">
+                    <tr>
+                        <th style="padding: 1rem; text-align: left;">Oddělení</th>
+                        <th style="padding: 1rem; text-align: left;">Vedoucí lékař</th>
+                        <th style="padding: 1rem; text-align: left;">Telefon</th>
+                        <th style="padding: 1rem; text-align: left;">Umístění</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 1rem;">Kardiologie</td>
+                        <td style="padding: 1rem;">MUDr. Jan Novák</td>
+                        <td style="padding: 1rem;">123 456 789</td>
+                        <td style="padding: 1rem;">Budova A, 2. patro</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <td style="padding: 1rem;">Neurologie</td>
+                        <td style="padding: 1rem;">MUDr. Eva Svobodová</td>
+                        <td style="padding: 1rem;">123 456 790</td>
+                        <td style="padding: 1rem;">Budova B, 1. patro</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 1rem;">Ortopedie</td>
+                        <td style="padding: 1rem;">MUDr. Petr Dvořák</td>
+                        <td style="padding: 1rem;">123 456 791</td>
+                        <td style="padding: 1rem;">Budova A, Přízemí</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </main>
 
@@ -152,6 +154,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hide search box on scroll (mobile only)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 767) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 100) {
+                    document.body.classList.add('scrolled');
+                } else {
+                    document.body.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 

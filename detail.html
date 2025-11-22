@@ -43,7 +43,7 @@
             </ul>
         </nav>
 
-        <article style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin-bottom: 4rem;">
+        <article class="detail-grid">
             <aside>
                 <img src="https://placehold.co/400x400/eef/333?text=MUDr.+Novak" alt="MUDr. Jan Novák" style="border-radius: 8px; margin-bottom: 1rem;">
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
@@ -136,6 +136,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hide search box on scroll (mobile only)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 767) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 100) {
+                    document.body.classList.add('scrolled');
+                } else {
+                    document.body.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 

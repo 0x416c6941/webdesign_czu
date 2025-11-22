@@ -64,39 +64,39 @@
                 <p><strong>Datová schránka:</strong> abcdef</p>
             </div>
 
-            <div class="grid-item" style="grid-column: span 2;">
+            <div class="grid-item opening-hours-card" style="grid-column: span 2;">
                 <h3>Otevírací doba</h3>
-                <table style="width: 100%; margin-top: 1rem;">
+                <table class="opening-hours-table" style="width: 100%; margin-top: 1rem;">
                     <tr>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Pondělí</td>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee;">Pondělí</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">7:00 - 18:00</td>
                     </tr>
                     <tr>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Úterý</td>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee;">Úterý</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">7:00 - 18:00</td>
                     </tr>
                     <tr>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Středa</td>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee;">Středa</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">7:00 - 18:00</td>
                     </tr>
                     <tr>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Čtvrtek</td>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee;">Čtvrtek</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">7:00 - 18:00</td>
                     </tr>
                     <tr>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Pátek</td>
-                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 16:00</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee;">Pátek</td>
+                        <td style="padding: 0.75rem 0; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">7:00 - 16:00</td>
                     </tr>
                     <tr>
-                        <td style="padding: 0.5rem 0;">Víkend</td>
-                        <td style="padding: 0.5rem 0; text-align: right; color: var(--color-danger);">Pohotovost</td>
+                        <td style="padding: 0.75rem 0;">Víkend</td>
+                        <td style="padding: 0.75rem 0; text-align: right; color: var(--color-danger); font-weight: bold;">Pohotovost</td>
                     </tr>
                 </table>
             </div>
 
             <div class="grid-item" style="grid-column: span 4;">
                 <h3>Napište nám</h3>
-                <form action="#" method="post" style="margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <form action="#" method="post" style="margin-top: 1rem;" class="form-grid-2">
                     <div class="form-group">
                         <label for="name">Jméno a Příjmení</label>
                         <input type="text" id="name" name="name" required>
@@ -105,15 +105,15 @@
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="form-group" style="grid-column: span 2;">
+                    <div class="form-group" style="grid-column: 1 / -1;">
                         <label for="subject">Předmět</label>
                         <input type="text" id="subject" name="subject" required>
                     </div>
-                    <div class="form-group" style="grid-column: span 2;">
+                    <div class="form-group" style="grid-column: 1 / -1;">
                         <label for="message">Zpráva</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <div style="grid-column: span 2;">
+                    <div style="grid-column: 1 / -1;">
                         <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Odeslat zprávu</button>
                     </div>
                 </form>
@@ -151,6 +151,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hide search box on scroll (mobile only)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 767) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 100) {
+                    document.body.classList.add('scrolled');
+                } else {
+                    document.body.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 

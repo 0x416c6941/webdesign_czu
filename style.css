@@ -84,7 +84,7 @@ ul {
 }
 
 /* Header & Nav */
-header {
+body > header {
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
     position: sticky;
@@ -100,9 +100,11 @@ header {
     text-align: center;
 }
 
+/* Mobile First Navigation */
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--spacing-md);
     align-items: center;
     padding: var(--spacing-md) 0;
 }
@@ -116,12 +118,16 @@ header {
 
 .main-nav ul {
     display: flex;
-    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
 }
 
 .main-nav a {
     color: var(--color-text-main);
     font-weight: 500;
+    padding: 0.5rem;
+    display: block;
 }
 
 .main-nav a:hover, .main-nav a.active {
@@ -132,12 +138,27 @@ header {
 .search-box {
     display: flex;
     gap: var(--spacing-xs);
+    width: 100%;
+    max-width: 400px; /* Limit width on mobile */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Hide search on scroll (mobile only) */
+@media (max-width: 767px) {
+    body.scrolled .search-box {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .search-box input {
     padding: var(--spacing-xs) var(--spacing-sm);
     border: 1px solid #ddd;
     border-radius: var(--border-radius);
+    flex-grow: 1; /* Fill available space */
 }
 
 .search-box button {
@@ -203,6 +224,53 @@ header {
     transform: translateY(-5px);
 }
 
+/* Doctor Cards */
+.doctor-card {
+    flex: 1 1 300px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+}
+
+.doctor-card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.doctor-card-specialty {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.doctor-card-footer {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.doctor-card-link {
+    font-weight: bold;
+}
+
+/* Search Results */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.search-result-item {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
 /* Footer */
 footer {
     background-color: var(--color-text-main);
@@ -246,8 +314,37 @@ footer {
     font-weight: bold;
 }
 
-/* Media Queries for Responsiveness */
+/* Detail Page Responsive Layout */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Form Grid Layout */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Table Responsive Wrapper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+}
+
+/* Media Queries for Desktop/Tablet */
 @media (min-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-lg); /* More padding on desktop */
+    }
+
     .grid-container {
         /* Tablet/Desktop: Grid with multiple columns */
         grid-template-columns: repeat(4, 1fr);
@@ -267,6 +364,23 @@ footer {
     
     .nav-container {
         flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main-nav ul {
+        gap: var(--spacing-md);
+    }
+
+    .search-box {
+        width: auto;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .form-grid-2 {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -350,6 +464,23 @@ table {
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     overflow: hidden;
+}
+
+/* Opening hours table specific styling */
+.opening-hours-table {
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.opening-hours-table td {
+    font-size: 1rem;
+    padding: 0.75rem 0 !important;
+}
+
+.opening-hours-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 th, td {
@@ -438,7 +569,7 @@ input[type="checkbox"], input[type="radio"] {
 
 /* Print Styles */
 @media print {
-    header, footer, .search-box, .cta-button, .student-project-notice {
+    body > header, footer, .search-box, .cta-button, .student-project-notice {
         display: none !important;
     }
 
@@ -486,30 +617,145 @@ input[type="checkbox"], input[type="radio"] {
         --color-bg-light: #121212;
         --color-white: #1e1e1e;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        --color-primary: #48cae4; /* Lighter blue for dark mode */
     }
 
     body {
         background-color: #121212;
+        color: var(--color-text-main);
     }
 
-    .grid-item, article, header {
-        background-color: #1e1e1e;
+    /* Backgrounds for cards and containers */
+    .grid-item, 
+    article, 
+    body > header,
+    .doctor-card,
+    .search-result-item,
+    table,
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea,
+    .search-box input,
+    form,
+    fieldset {
+        background-color: #1e1e1e !important;
+        border-color: #333;
+        color: var(--color-text-main);
+    }
+
+    /* Specific elements */
+    .doctor-card-footer,
+    tr:hover,
+    .breadcrumbs {
+        background-color: #252525 !important;
         border-color: #333;
     }
+
+    /* Table row alternating colors in dark mode */
+    tbody tr:nth-child(even) {
+        background-color: #252525 !important;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #1a1a1a !important;
+    }
+
+    /* Table headers */
+    thead, th {
+        background-color: var(--color-primary) !important;
+        color: white !important;
+    }
+
+    /* Table cells */
+    td {
+        color: var(--color-text-main) !important;
+        border-color: #333 !important;
+    }
+
+    /* Form labels */
+    label, legend {
+        color: var(--color-text-main) !important;
+    }
+
+    /* Form fieldset borders */
+    fieldset {
+        border: none !important;
+    }
+
+    legend {
+        border-bottom-color: var(--color-secondary) !important;
+    }
+
+    /* Links */
+    a {
+        color: var(--color-secondary);
+    }
     
-    input, select, textarea {
-        background-color: #2d2d2d;
-        color: white;
+    a:hover {
+        color: var(--color-accent);
+    }
+
+    /* Text colors in specific contexts */
+    .main-nav a {
+        color: var(--color-text-main);
+    }
+    
+    .main-nav a:hover, .main-nav a.active {
+        color: var(--color-secondary);
+    }
+
+    .breadcrumbs li a {
+        color: var(--color-text-light);
+    }
+
+    /* Images opacity to reduce glare */
+    img {
+        opacity: 0.9;
+    }
+
+    /* Form elements border */
+    input, select, textarea, button {
         border-color: #444;
     }
-    
-    tr:hover {
-        background-color: #2d2d2d;
-    }
-    
-    .breadcrumbs {
+
+    /* Select dropdown options */
+    option {
         background-color: #1e1e1e;
-        border-bottom-color: #333;
+        color: var(--color-text-main);
+    }
+
+    /* Departments section background */
+    .departments-section.bg-light {
+        background-color: #121212 !important;
+    }
+
+    /* Aside box */
+    aside > div {
+        background-color: #1e1e1e !important;
+        border-left-color: var(--color-secondary) !important;
+    }
+
+    /* Footer fixes */
+    footer {
+        background-color: #0d0d0d !important;
+        color: var(--color-text-main);
+    }
+
+    .footer-column h3 {
+        color: var(--color-secondary);
+    }
+
+    .footer-column a {
+        color: #aaa !important;
+    }
+
+    .footer-column a:hover {
+        color: var(--color-secondary) !important;
+    }
+
+    .footer-bottom {
+        color: #888;
+        border-top-color: #333;
     }
 }
 
