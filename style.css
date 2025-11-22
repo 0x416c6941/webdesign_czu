@@ -218,18 +218,10 @@ body > header {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
 }
 
 .grid-item:hover {
     transform: translateY(-5px);
-}
-
-.grid-item img {
-    flex: 1;
-    object-fit: cover;
-    min-height: 150px;
 }
 
 /* Doctor Cards */
@@ -368,6 +360,9 @@ footer {
 
     .grid-item:nth-child(5) {
         grid-column: span 2;
+        grid-row: span 2;
+        background-color: var(--color-primary-light);
+
     }
     
     .nav-container {
