@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výsledky vyhledávání - MediCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt.
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MediCare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="doctors.html">Lékaři & Oddělení</a></li>
+                    <li><a href="reservation.html">Rezervace</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get" class="search-box">
+                <input type="text" name="q" placeholder="kardiologie" value="kardiologie" aria-label="Vyhledávání">
+                <button type="submit">Hledat</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav aria-label="Drobečková navigace" class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li>Výsledky vyhledávání</li>
+            </ul>
+        </nav>
+
+        <h1>Výsledky vyhledávání</h1>
+        <p style="margin-bottom: 2rem;">Nalezeno 3 výsledků pro dotaz "<strong>kardiologie</strong>".</p>
+        
+        <div class="search-results" style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 4rem;">
+            
+            <!-- Result 1 -->
+            <article style="background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="margin-bottom: 0.5rem;"><a href="doctors.html">Oddělení Kardiologie</a></h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Lékaři & Oddělení</p>
+                <p>Naše <strong>kardiologie</strong> poskytuje komplexní péči o srdce a cévy. Provádíme diagnostiku i léčbu srdečních onemocnění včetně preventivních prohlídek...</p>
+            </article>
+
+            <!-- Result 2 -->
+            <article style="background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="margin-bottom: 0.5rem;"><a href="detail.html">MUDr. Jan Novák - Kardiolog</a></h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Náš tým</p>
+                <p>MUDr. Jan Novák je primářem oddělení <strong>kardiologie</strong>. Specializuje se na arytmie a hypertenzi...</p>
+            </article>
+
+            <!-- Result 3 -->
+            <article style="background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px;">
+                <h3 style="margin-bottom: 0.5rem;"><a href="reservation.html">Rezervace kardiologického vyšetření</a></h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Služby</p>
+                <p>Objednejte se na <strong>kardiologické</strong> vyšetření online. Nabízíme krátké objednací lhůty...</p>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediCare</h3>
+                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
+                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <address style="font-style: normal;">
+                        Ulice Studentská 123<br>
+                        123 00 Praha<br>
+                        Email: info@medicare-student.cz
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. Studentský projekt.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

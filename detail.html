@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail lékaře - MediCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt.
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MediCare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="doctors.html" class="active">Lékaři & Oddělení</a></li>
+                    <li><a href="reservation.html">Rezervace</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get" class="search-box">
+                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                <button type="submit">Hledat</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav aria-label="Drobečková navigace" class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="doctors.html">Lékaři a Oddělení</a></li>
+                <li>MUDr. Jan Novák</li>
+            </ul>
+        </nav>
+
+        <article style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin-bottom: 4rem;">
+            <aside>
+                <img src="https://placehold.co/400x400/eef/333?text=MUDr.+Novak" alt="MUDr. Jan Novák" style="border-radius: 8px; margin-bottom: 1rem;">
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                    <h3>Kontakt</h3>
+                    <p><strong>Telefon:</strong> +420 123 456 789</p>
+                    <p><strong>Email:</strong> novak@medicare.cz</p>
+                    <p><strong>Kancelář:</strong> Budova A, 2. patro, č. 204</p>
+                    <a href="reservation.html" class="cta-button" style="margin-top: 1rem; display: block; text-align: center;">Objednat se</a>
+                </div>
+            </aside>
+
+            <div class="content">
+                <header>
+                    <h1 style="margin-bottom: 0.5rem;">MUDr. Jan Novák</h1>
+                    <p style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 1.5rem;">Primář kardiologického oddělení</p>
+                </header>
+
+                <section style="margin-bottom: 2rem;">
+                    <h2>O lékaři</h2>
+                    <p>MUDr. Jan Novák je uznávaným specialistou v oboru kardiologie s více než patnáctiletou praxí. Vystudoval Lékařskou fakultu Univerzity Karlovy v Praze a následně působil na několika prestižních klinikách v zahraničí.</p>
+                    <p style="margin-top: 1rem;">Specializuje se především na diagnostiku a léčbu srdečních arytmií, hypertenze a preventivní kardiologii. Je autorem mnoha odborných publikací a pravidelně přednáší na mezinárodních konferencích.</p>
+                </section>
+
+                <section style="margin-bottom: 2rem;">
+                    <h2>Specializace</h2>
+                    <ul style="list-style: disc; padding-left: 1.5rem; line-height: 1.8;">
+                        <li>Komplexní kardiologické vyšetření</li>
+                        <li>Echokardiografie (ECHO srdce)</li>
+                        <li>Holterovské monitorování EKG a tlaku</li>
+                        <li>Ergometrie (zátěžové testy)</li>
+                        <li>Léčba hypertenze a dyslipidemie</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Ordinační hodiny</h2>
+                    <table style="width: 100%; max-width: 400px; margin-top: 1rem; border: 1px solid #eee;">
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Pondělí</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee; font-weight: bold;">8:00 - 16:00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Úterý</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee; font-weight: bold;">8:00 - 14:00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Středa</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee; font-weight: bold;">12:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee;">Čtvrtek</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid #eee; font-weight: bold;">8:00 - 16:00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem;">Pátek</td>
+                            <td style="padding: 0.5rem; font-weight: bold;">8:00 - 12:00</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediCare</h3>
+                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
+                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <address style="font-style: normal;">
+                        Ulice Studentská 123<br>
+                        123 00 Praha<br>
+                        Email: info@medicare-student.cz
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. Studentský projekt.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervace návštěvy - MediCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt.
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MediCare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="doctors.html">Lékaři & Oddělení</a></li>
+                    <li><a href="reservation.html" class="active">Rezervace</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get" class="search-box">
+                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                <button type="submit">Hledat</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav aria-label="Drobečková navigace" class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li>Rezervace návštěvy</li>
+            </ul>
+        </nav>
+
+        <section style="max-width: 800px; margin: 0 auto;">
+            <h1>Rezervace návštěvy</h1>
+            <p style="margin-bottom: 2rem;">Vyplňte prosím formulář níže pro objednání vyšetření. Budeme vás kontaktovat pro potvrzení termínu.</p>
+
+            <form action="#" method="post" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--box-shadow); margin-bottom: 4rem;">
+                
+                <fieldset style="border: none; margin-bottom: 2rem;">
+                    <legend style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; border-bottom: 2px solid var(--color-secondary); width: 100%; padding-bottom: 0.5rem;">1. Výběr oddělení a termínu</legend>
+                    
+                    <div class="form-group">
+                        <label for="department">Oddělení *</label>
+                        <select id="department" name="department" required>
+                            <option value="">-- Vyberte oddělení --</option>
+                            <option value="kardiologie">Kardiologie</option>
+                            <option value="neurologie">Neurologie</option>
+                            <option value="ortopedie">Ortopedie</option>
+                            <option value="pediatrie">Pediatrie</option>
+                            <option value="rehabilitace">Rehabilitace</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doctor">Preferovaný lékař (volitelné)</label>
+                        <select id="doctor" name="doctor">
+                            <option value="">-- Kdokoliv --</option>
+                            <option value="novak">MUDr. Jan Novák</option>
+                            <option value="svobodova">MUDr. Eva Svobodová</option>
+                            <option value="dvorak">MUDr. Petr Dvořák</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="date">Preferované datum *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div>
+                            <label for="time">Preferovaný čas *</label>
+                            <select id="time" name="time" required>
+                                <option value="">-- Vyberte čas --</option>
+                                <option value="morning">Dopoledne (8:00 - 12:00)</option>
+                                <option value="afternoon">Odpoledne (12:00 - 16:00)</option>
+                                <option value="evening">Podvečer (16:00 - 18:00)</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset style="border: none; margin-bottom: 2rem;">
+                    <legend style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; border-bottom: 2px solid var(--color-secondary); width: 100%; padding-bottom: 0.5rem;">2. Osobní údaje</legend>
+                    
+                    <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="firstname">Jméno *</label>
+                            <input type="text" id="firstname" name="firstname" required>
+                        </div>
+                        <div>
+                            <label for="lastname">Příjmení *</label>
+                            <input type="text" id="lastname" name="lastname" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="birthdate">Datum narození *</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        </div>
+                        <div>
+                            <label for="insurance">Pojišťovna *</label>
+                            <select id="insurance" name="insurance" required>
+                                <option value="111">111 - VZP</option>
+                                <option value="201">201 - VoZP</option>
+                                <option value="205">205 - ČPZP</option>
+                                <option value="207">207 - OZP</option>
+                                <option value="211">211 - ZPMV</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789" required>
+                    </div>
+                </fieldset>
+
+                <fieldset style="border: none;">
+                    <legend style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; border-bottom: 2px solid var(--color-secondary); width: 100%; padding-bottom: 0.5rem;">3. Důvod návštěvy</legend>
+                    
+                    <div class="form-group">
+                        <label for="reason">Popis problému *</label>
+                        <textarea id="reason" name="reason" rows="4" placeholder="Stručně popište vaše zdravotní potíže..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal;">
+                            <input type="checkbox" name="consent" required style="width: auto;">
+                            Souhlasím se zpracováním osobních údajů pro účely rezervace.
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div style="margin-top: 2rem; text-align: right;">
+                    <button type="submit" class="cta-button" style="border: none; cursor: pointer; font-size: 1.1rem;">Odeslat žádost o rezervaci</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediCare</h3>
+                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
+                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <address style="font-style: normal;">
+                        Ulice Studentská 123<br>
+                        123 00 Praha<br>
+                        Email: info@medicare-student.cz
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. Studentský projekt.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Studentský Projekt</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="MediCare poliklinika - moderní zdravotní péče. Studentský projekt.">
+</head>
+<body>
+
+    <!-- Student Project Notice -->
+    <div class="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt vytvořený pro vzdělávací účely. Nejedná se o skutečné zdravotnické zařízení.
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MediCare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Domů</a></li>
+                    <li><a href="doctors.html">Lékaři & Oddělení</a></li>
+                    <li><a href="reservation.html">Rezervace</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get" class="search-box">
+                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                <button type="submit">Hledat</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <section class="hero">
+                <div class="container">
+                    <h1>Vaše zdraví je naší prioritou</h1>
+                    <p>Moderní poliklinika s komplexní péčí pro celou rodinu.</p>
+                    <a href="reservation.html" class="cta-button">Objednat se online</a>
+                </div>
+            </section>
+
+            <!-- Introduction -->
+            <section class="container" style="margin-top: 2rem; margin-bottom: 2rem;">
+                <h2>Vítejte v MediCare</h2>
+                <p>Jsme fiktivní zdravotnické zařízení zaměřené na poskytování prvotřídní péče v rámci studentského projektu. Naše týmy specialistů jsou připraveny se o vás postarat s využitím nejmodernějších technologií (generovaných AI).</p>
+            </section>
+
+            <!-- Grid Layout Requirement: Services/Departments -->
+            <section class="departments-section bg-light">
+                <div class="container">
+                    <h2>Naše oddělení</h2>
+                    <div class="grid-container">
+                        <!-- 8 elements minimum, 2 spanning multiple cells -->
+                        <div class="grid-item">
+                            <h3>Centrální příjem & Urgentní péče</h3>
+                            <p>Dostupnost 24/7 pro akutní případy. Plně vybavené traumacentrum.</p>
+                            <img src="https://placehold.co/400x200/eef/333?text=Urgent" alt="Urgentní péče" style="margin-top:1rem; width:100%;">
+                        </div>
+                        <div class="grid-item">
+                            <h3>Kardiologie</h3>
+                            <p>Komplexní péče o srdce.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Neurologie</h3>
+                            <p>Diagnostika nervového systému.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Pediatrie</h3>
+                            <p>Péče o děti a dorost.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Diagnostické centrum</h3>
+                            <p>Moderní rentgen, MRI a CT vyšetření na jednom místě. Rychlé výsledky.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Ortopedie</h3>
+                            <p>Léčba pohybového aparátu.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Dermatologie</h3>
+                            <p>Péče o kůži a estetika.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Rehabilitace</h3>
+                            <p>Fyzioterapie a masáže.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="container" style="margin-bottom: 2rem;">
+                <div style="background-color: #eef; padding: 1rem; border-left: 5px solid var(--color-primary);">
+                    <h3>Aktuality</h3>
+                    <time datetime="2023-11-22">22. Listopad 2023</time>
+                    <p>Zahájili jsme očkování proti chřipce. Rezervujte si termín online.</p>
+                </div>
+            </aside>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediCare</h3>
+                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
+                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <address style="font-style: normal;">
+                        Ulice Studentská 123<br>
+                        123 00 Praha<br>
+                        Email: info@medicare-student.cz
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. Studentský projekt. Autoři: Student 1, Student 2, Student 3, Student 4.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+

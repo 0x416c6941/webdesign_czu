@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lékaři a Oddělení - MediCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt.
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MediCare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="doctors.html" class="active">Lékaři & Oddělení</a></li>
+                    <li><a href="reservation.html">Rezervace</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get" class="search-box">
+                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                <button type="submit">Hledat</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav aria-label="Drobečková navigace" class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li>Lékaři a Oddělení</li>
+            </ul>
+        </nav>
+
+        <h1>Naši specialisté</h1>
+        <p style="margin-bottom: 2rem;">Vyberte si oddělení nebo konkrétního lékaře.</p>
+
+        <!-- Flexbox Layout Requirement -->
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem;">
+            
+            <!-- Card 1 -->
+            <article style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+                <img src="https://placehold.co/400x250/eef/333?text=MUDr.+Novak" alt="MUDr. Jan Novák">
+                <div style="padding: 1.5rem; flex-grow: 1;">
+                    <h2>MUDr. Jan Novák</h2>
+                    <p style="color: var(--color-primary); font-weight: bold;">Kardiologie</p>
+                    <p>Specialista na srdeční arytmie s 15 lety praxe.</p>
+                </div>
+                <div style="padding: 1rem; background: #f9f9f9; border-top: 1px solid #eee;">
+                    <a href="detail.html" style="font-weight: bold;">Zobrazit profil &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+                <img src="https://placehold.co/400x250/eef/333?text=MUDr.+Svobodova" alt="MUDr. Eva Svobodová">
+                <div style="padding: 1.5rem; flex-grow: 1;">
+                    <h2>MUDr. Eva Svobodová</h2>
+                    <p style="color: var(--color-primary); font-weight: bold;">Neurologie</p>
+                    <p>Vedoucí lékařka neurologického oddělení.</p>
+                </div>
+                <div style="padding: 1rem; background: #f9f9f9; border-top: 1px solid #eee;">
+                    <a href="detail.html" style="font-weight: bold;">Zobrazit profil &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
+                <img src="https://placehold.co/400x250/eef/333?text=MUDr.+Dvorak" alt="MUDr. Petr Dvořák">
+                <div style="padding: 1.5rem; flex-grow: 1;">
+                    <h2>MUDr. Petr Dvořák</h2>
+                    <p style="color: var(--color-primary); font-weight: bold;">Ortopedie</p>
+                    <p>Expert na sportovní zranění a kloubní náhrady.</p>
+                </div>
+                <div style="padding: 1rem; background: #f9f9f9; border-top: 1px solid #eee;">
+                    <a href="detail.html" style="font-weight: bold;">Zobrazit profil &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+
+        <h2>Seznam oddělení</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+            <thead style="background: var(--color-primary); color: white;">
+                <tr>
+                    <th style="padding: 1rem; text-align: left;">Oddělení</th>
+                    <th style="padding: 1rem; text-align: left;">Vedoucí lékař</th>
+                    <th style="padding: 1rem; text-align: left;">Telefon</th>
+                    <th style="padding: 1rem; text-align: left;">Umístění</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 1rem;">Kardiologie</td>
+                    <td style="padding: 1rem;">MUDr. Jan Novák</td>
+                    <td style="padding: 1rem;">123 456 789</td>
+                    <td style="padding: 1rem;">Budova A, 2. patro</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                    <td style="padding: 1rem;">Neurologie</td>
+                    <td style="padding: 1rem;">MUDr. Eva Svobodová</td>
+                    <td style="padding: 1rem;">123 456 790</td>
+                    <td style="padding: 1rem;">Budova B, 1. patro</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 1rem;">Ortopedie</td>
+                    <td style="padding: 1rem;">MUDr. Petr Dvořák</td>
+                    <td style="padding: 1rem;">123 456 791</td>
+                    <td style="padding: 1rem;">Budova A, Přízemí</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediCare</h3>
+                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
+                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <address style="font-style: normal;">
+                        Ulice Studentská 123<br>
+                        123 00 Praha<br>
+                        Email: info@medicare-student.cz
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. Studentský projekt.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

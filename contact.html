@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - MediCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt.
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MediCare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="doctors.html">Lékaři & Oddělení</a></li>
+                    <li><a href="reservation.html">Rezervace</a></li>
+                    <li><a href="contact.html" class="active">Kontakt</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get" class="search-box">
+                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                <button type="submit">Hledat</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav aria-label="Drobečková navigace" class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li>Kontakt</li>
+            </ul>
+        </nav>
+
+        <h1>Kontaktujte nás</h1>
+        
+        <div class="grid-container" style="margin-top: 2rem;">
+            
+            <div style="grid-column: span 4;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.0123456789!2d14.42076!3d50.08804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA1JzE2LjkiTiAxNMKwMjUnMTQuNyJF!5e0!3m2!1scs!2scz!4v1234567890" width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa"></iframe>
+            </div>
+
+            <div class="grid-item" style="grid-column: span 2;">
+                <h3>Kde nás najdete</h3>
+                <address style="font-style: normal; line-height: 2;">
+                    <strong>MediCare Poliklinika</strong><br>
+                    Ulice Studentská 123<br>
+                    123 00 Praha 1<br>
+                    Česká republika
+                </address>
+                <h3 style="margin-top: 1.5rem;">Kontaktní údaje</h3>
+                <p><strong>Recepce:</strong> +420 123 456 789</p>
+                <p><strong>Email:</strong> info@medicare-student.cz</p>
+                <p><strong>Datová schránka:</strong> abcdef</p>
+            </div>
+
+            <div class="grid-item" style="grid-column: span 2;">
+                <h3>Otevírací doba</h3>
+                <table style="width: 100%; margin-top: 1rem;">
+                    <tr>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Pondělí</td>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Úterý</td>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Středa</td>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Čtvrtek</td>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">Pátek</td>
+                        <td style="padding: 0.5rem 0; border-bottom: 1px solid #eee; text-align: right;">7:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0;">Víkend</td>
+                        <td style="padding: 0.5rem 0; text-align: right; color: var(--color-danger);">Pohotovost</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="grid-item" style="grid-column: span 4;">
+                <h3>Napište nám</h3>
+                <form action="#" method="post" style="margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="name">Jméno a Příjmení</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label for="subject">Předmět</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label for="message">Zpráva</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div style="grid-column: span 2;">
+                        <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Odeslat zprávu</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MediCare</h3>
+                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
+                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
+                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <address style="font-style: normal;">
+                        Ulice Studentská 123<br>
+                        123 00 Praha<br>
+                        Email: info@medicare-student.cz
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediCare. Studentský projekt.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

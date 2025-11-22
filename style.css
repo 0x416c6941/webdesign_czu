@@ -1,0 +1,515 @@
+/* 
+    MediCare Clinic - Student Project 
+    Authors: [Your Names]
+*/
+
+:root {
+    /* Palette */
+    --color-primary: #0077b6;
+    --color-primary-dark: #023e8a;
+    --color-secondary: #48cae4;
+    --color-accent: #90e0ef;
+    --color-text-main: #333333;
+    --color-text-light: #666666;
+    --color-bg-light: #f8f9fa;
+    --color-white: #ffffff;
+    --color-danger: #e63946;
+    --color-success: #2a9d8f;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* Typography */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+
+    /* Borders & Shadows */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    background-color: var(--color-bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: var(--spacing-xs) 0;
+    font-size: var(--text-sm);
+    text-align: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-nav a {
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-primary);
+}
+
+/* Search Box (Required on all pages) */
+.search-box {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.search-box input {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+.search-box button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,119,182,0.8), rgba(0,119,182,0.8)), url('https://placehold.co/1200x600/eee/333?text=Hospital+Image');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    margin-top: var(--spacing-md);
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Grid Layout Requirement: Departments */
+.departments-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.grid-container {
+    display: grid;
+    gap: var(--spacing-md);
+    /* Mobile first: 1 column */
+    grid-template-columns: 1fr; 
+}
+
+.grid-item {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-text-main);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-secondary);
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    text-align: center;
+    font-size: var(--text-sm);
+    color: #888;
+}
+
+.student-project-notice {
+    background-color: var(--color-danger);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .grid-container {
+        /* Tablet/Desktop: Grid with multiple columns */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    /* Requirement: 2 elements spanning multiple cells */
+    .grid-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+        background-color: var(--color-primary-light);
+    }
+
+    .grid-item:nth-child(5) {
+        grid-column: span 2;
+    }
+    
+    .nav-container {
+        flex-direction: row;
+    }
+}
+
+/* Accessibility & Focus */
+:focus {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+}
+
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: var(--spacing-md) 0;
+    background-color: #f0f0f0;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.breadcrumbs ul {
+    display: flex;
+    gap: var(--spacing-sm);
+    color: var(--color-text-light);
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.breadcrumbs li a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.breadcrumbs li::after {
+    content: "/";
+    margin-left: var(--spacing-sm);
+    color: #ccc;
+}
+
+.breadcrumbs li:last-child {
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+th, td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    letter-spacing: 0.5px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Custom Checkbox & Radio */
+input[type="checkbox"], input[type="radio"] {
+    accent-color: var(--color-primary);
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+}
+
+/* Alerts & Messages */
+.alert {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid transparent;
+}
+
+.alert-info {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border-color: #bbdefb;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border-color: #c8e6c9;
+}
+
+.alert-warning {
+    background-color: #fff3e0;
+    color: #e65100;
+    border-color: #ffe0b2;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border-color: #ffcdd2;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: var(--spacing-md); }
+.mt-2 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-md); }
+.mb-2 { margin-bottom: var(--spacing-lg); }
+
+.d-none { display: none; }
+.d-block { display: block; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Print Styles */
+@media print {
+    header, footer, .search-box, .cta-button, .student-project-notice {
+        display: none !important;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+    
+    @page {
+        margin: 2cm;
+    }
+}
+
+/* Dark Mode Support (Optional but good for "Modern") */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text-main: #f0f0f0;
+        --color-text-light: #cccccc;
+        --color-bg-light: #121212;
+        --color-white: #1e1e1e;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+        background-color: #121212;
+    }
+
+    .grid-item, article, header {
+        background-color: #1e1e1e;
+        border-color: #333;
+    }
+    
+    input, select, textarea {
+        background-color: #2d2d2d;
+        color: white;
+        border-color: #444;
+    }
+    
+    tr:hover {
+        background-color: #2d2d2d;
+    }
+    
+    .breadcrumbs {
+        background-color: #1e1e1e;
+        border-bottom-color: #333;
+    }
+}
+
