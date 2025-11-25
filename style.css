@@ -1,10 +1,24 @@
-/*
-	MediCare Clinic - Student Project
-	Authors: The webdesign_czu team.
- */
+/* Make all spacings predictable.
+ * We ESPECIALLY want border-box to be the default. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+/* According to lecture by Mr. Masner, ":root" selector
+ * may be unsupported in some web browsers.
+ * The correct display has only been checked
+ * in the latest versions of Firefox and Safari. */
 :root {
-    /* Palette */
+    /**
+     * Honestly, the easiest way to make sure those properties
+     * are accessible everywhere is to define them in "html" selector,
+     * so that all other selectors inherit them.
+     * We would need to solve DOM structure otherwise :(
+     */
+
+    /* Colors. */
     --color-primary: #0077b6;
     --color-primary-dark: #023e8a;
     --color-secondary: #48cae4;
@@ -16,14 +30,14 @@
     --color-danger: #e63946;
     --color-success: #2a9d8f;
 
-    /* Spacing */
+    /* Spacing. */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
 
-    /* Typography */
+    /* Fonts. */
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --text-sm: 0.875rem;
@@ -32,17 +46,10 @@
     --text-xl: 1.5rem;
     --text-2xl: 2rem;
 
-    /* Borders & Shadows */
+    /* Borders and shadows. */
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Reset & Base */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -305,6 +312,7 @@ footer {
     color: #888;
 }
 
+/* "Viditelné označení, že se jedná o studentský projekt" */
 .student-project-notice {
     background-color: var(--color-danger);
     color: white;
