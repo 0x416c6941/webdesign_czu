@@ -1,13 +1,15 @@
 :root {
     /* Colors.
      * Yes, CSS does provide it's own colors, but they're ugly :( */
-    --color-bg: #f8f9fa;
-    --color-text-main: #333333;
-    --color-text-light: #929292;
-    --color-primary: #0077b6;
-    --color-primary-dark: #023e8a;
+    --color-bg: #f8f9fa;                /* Base background color. */
+    --color-text-main: #333333;         /* Base foreground (text) color. */
+    --color-text-light: #929292;        /* Breadcrumbs-related. */
     --color-warning: #e63946;           /* "#student-project-notice". */
+    --color-header-top: #023e8a;        /* "#header-top". */
     --color-white: #ffffff;             /* For dark mode. */
+    --color-primary: #0077b6;           /* "#nav-logo", "a", ... */
+    --color-primary-hover: #023e8a;     /* "a:hover". */
+    --color-button: #0077b6;            /* "#search-box button". */
     --color-secondary: #48cae4;
     --color-accent: #90e0ef;
     --color-appointment-bg: #48cae4;    /* ".cta-button" (to tweak dark mode). */
@@ -72,7 +74,7 @@ body > header {
 }
 
 #header-top {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-header-top);
     color: var(--color-white);
     text-align: center;
     padding: var(--spacing-xs) 0;
@@ -139,47 +141,16 @@ body > header {
 }
 
 #search-box button {
-    padding: var(--spacing-sm) var(--spacing-sm);
-    background-color: var(--color-primary);
+    background-color: var(--color-button);
     color: var(--color-white);
     border: none;
     border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-sm);
     cursor: pointer;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-primary);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--color-primary-dark);
-}
-
-ul {
-    list-style: none;
-}
-
-/* Hide search on scroll (mobile only) */
-@media (max-width: 767px) {
-    body.scrolled #search-box {
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-    }
-}
-
-/* Hero Section */
-.hero {
+/* -------- Hero section. -------- */
+#hero {
     background: linear-gradient(rgba(0,119,182,0.8), rgba(0,119,182,0.8)), url('https://placehold.co/1200x600/eee/333?text=Hospital+Image');
     background-size: cover;
     background-position: center;
@@ -206,6 +177,26 @@ ul {
 .cta-button:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+ul {
+    list-style: none;
 }
 
 /* Grid Layout Requirement: Departments */
@@ -602,7 +593,8 @@ input[type="checkbox"], input[type="radio"] {
         --color-bg: #121212;
         --color-white: #e2e2e2;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        --color-primary: #48cae4; /* Lighter blue for dark mode */
+        --color-primary: #48cae4;                   /* Lighter blue for dark mode */
+        --color-button: #0077b6;
         --color-appointment-bg: #0c1f23;
     }
 
