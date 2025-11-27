@@ -596,7 +596,7 @@ input[type="checkbox"], input[type="radio"] {
         --color-text-main: #f0f0f0;
         --color-text-light: #cccccc;
         --color-bg-light: #121212;
-        --color-white: #1e1e1e;
+        --color-white: #e2e2e2;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         --color-primary: #48cae4; /* Lighter blue for dark mode */
     }
