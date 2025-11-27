@@ -18,7 +18,7 @@
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
 
-    /* Typography */
+    /* Fonts. */
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --text-sm: 0.875rem;
@@ -27,17 +27,10 @@
     --text-xl: 1.5rem;
     --text-2xl: 2rem;
 
-    /* Borders & Shadows */
+    /* Borders and shadows. */
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Reset & Base */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -300,6 +293,7 @@ footer {
     color: #888;
 }
 
+/* "Viditelné označení, že se jedná o studentský projekt" */
 .student-project-notice {
     background-color: var(--color-danger);
     color: white;
@@ -596,7 +590,7 @@ input[type="checkbox"], input[type="radio"] {
         --color-text-main: #f0f0f0;
         --color-text-light: #cccccc;
         --color-bg-light: #121212;
-        --color-white: #1e1e1e;
+        --color-white: #e2e2e2;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         --color-primary: #48cae4; /* Lighter blue for dark mode */
     }
