@@ -1,19 +1,17 @@
 :root {
-    /* Colors.*/
+    /* Colors.
+     * Yes, CSS does provide it's own colors, but they're ugly :( */
+    --color-bg: #f8f9fa;
+    --color-text-main: #333333;
+    --color-text-light: #929292;
     --color-primary: #0077b6;
     --color-primary-dark: #023e8a;
     --color-secondary: #48cae4;
     --color-accent: #90e0ef;
-    --color-text-main: #333333;
-    --color-text-light: #929292;
-    --color-bg: #f8f9fa;
-    /* Color specifically for ".cta-button" selector
-     * (to tweak dark mode). */
-    --color-appointment-bg: #48cae4;
-    --color-white: #ffffff;
+    --color-appointment-bg: #48cae4;    /* ".cta-button" (to tweak dark mode). */
+    --color-white: #ffffff;             /* For dark mode. */
     --color-success: #2a9d8f;
-
-    --color-warning: #e63946;
+    --color-warning: #e63946;           /* "#student-project-notice". */
 
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -22,9 +20,8 @@
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
 
-    /* Typography */
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Generic font sizes.
+     * Some selectors may still use their own unique values. */
     --text-sm: 0.875rem;
     --text-base: 1rem;
     --text-lg: 1.25rem;
@@ -37,8 +34,6 @@
     --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Make all margins and paddings predictable
- * by not having any out of the box. */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -46,7 +41,7 @@
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-text-main);
     line-height: 1.6;
     background-color: var(--color-bg);
@@ -64,8 +59,26 @@ body {
     font-size: 0.8rem;
     font-weight: bold;
     position: sticky;
-    top: 0;
-    z-index: 1001;
+    top: 0px;
+    z-index: 1;
+}
+
+/* Header with opening hours and telephone number, and navigation. */
+body > header {
+    box-shadow: var(--box-shadow);
+    /* Need to explicitly specify a layer (z-index) for shadows to appear.
+     * Thanks to Google Gemini for pointing this out. */
+    z-index: 0;
+}
+
+/* Purely a layout container to add padding on left and right. */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* margin: <top-bottom> <left-right>. */
+    margin: 0 auto;
+    /* Same story: padding: <top-bottom> <left-right>. */
+    padding: 0 var(--spacing-md);
 }
 
 img {
@@ -87,27 +100,6 @@ a:hover {
 ul {
     list-style: none;
 }
-
-/* Layout Utilities */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    /* margin: <top-bottom> <left-right>. */
-    margin: 0 auto;
-    /* Same story:
-     * padding: <top-bottom> <left-right>. */
-    padding: 0 var(--spacing-md);
-}
-
-/* Header & Nav */
-/*
-body > header {
-    background-color: var(--color-white);
-    box-shadow: var(--box-shadow);
-    top: 0;
-    z-index: 1000;
-}
- */
 
 .header-top {
     background-color: var(--color-primary-dark);
