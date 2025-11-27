@@ -101,8 +101,8 @@ body > header {
 /* Mobile First Navigation */
 .nav-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--spacing-md);
     align-items: center;
     padding: var(--spacing-md) 0;
 }
@@ -112,67 +112,24 @@ body > header {
     font-size: var(--text-xl);
     font-weight: 700;
     color: var(--color-primary);
-    order: 1;
-}
-
-/* Burger Menu Toggle */
-.nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-    order: 2;
-}
-
-.nav-toggle-label span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--color-primary);
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-/* Main Nav - Hidden on mobile by default */
-.main-nav {
-    display: none;
-    width: 100%;
-    order: 4;
-    margin-top: var(--spacing-md);
-    border-top: 1px solid #eee;
-}
-
-/* Show Nav when checkbox is checked */
-#nav-toggle:checked ~ .main-nav {
-    display: block;
 }
 
 .main-nav ul {
     display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.main-nav li {
-    border-bottom: 1px solid #f0f0f0;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
 }
 
 .main-nav a {
     color: var(--color-text-main);
     font-weight: 500;
-    padding: 1rem;
+    padding: 0.5rem;
     display: block;
-    text-align: center;
 }
 
 .main-nav a:hover, .main-nav a.active {
     color: var(--color-primary);
-    background-color: #f8f9fa;
 }
 
 /* Search Box (Required on all pages) */
@@ -180,11 +137,20 @@ body > header {
     display: flex;
     gap: var(--spacing-xs);
     width: 100%;
-    max-width: 100%;
-    margin-top: var(--spacing-md);
-    order: 3; /* Attached statically below header top row */
+    max-width: 400px; /* Limit width on mobile */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
+/* Hide search on scroll (mobile only) */
+@media (max-width: 767px) {
+    body.scrolled .search-box {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+}
 
 .search-box input {
     padding: var(--spacing-xs) var(--spacing-sm);
@@ -399,46 +365,15 @@ footer {
 
     .nav-container {
         flex-direction: row;
-        flex-wrap: nowrap;
         justify-content: space-between;
-        align-items: center;
-    }
-
-    /* Hide burger on desktop */
-    .nav-toggle-label {
-        display: none;
-    }
-
-    /* Reset Nav */
-    .main-nav {
-        display: block;
-        width: auto;
-        order: initial;
-        margin-top: 0;
-        border-top: none;
     }
 
     .main-nav ul {
-        flex-direction: row;
         gap: var(--spacing-md);
-    }
-    
-    .main-nav li {
-        border-bottom: none;
-    }
-    
-    .main-nav a {
-        padding: 0.5rem;
-    }
-    
-    .main-nav a:hover, .main-nav a.active {
-        background-color: transparent;
     }
 
     .search-box {
         width: auto;
-        margin-top: 0;
-        order: initial;
     }
 
     .detail-grid {
