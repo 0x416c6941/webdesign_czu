@@ -6,7 +6,8 @@
     --color-accent: #90e0ef;
     --color-text-main: #333333;
     --color-text-light: #666666;
-    --color-bg-light: #f8f9fa;
+    --color-bg: #f8f9fa;
+    --color-appointment-bg: #0c1f23;
     --color-white: #ffffff;
     --color-danger: #e63946;
     --color-success: #2a9d8f;
@@ -44,7 +45,7 @@ body {
     font-family: var(--font-main);
     color: var(--color-text-main);
     line-height: 1.6;
-    background-color: var(--color-bg-light);
+    background-color: var(--color-bg);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -182,7 +183,7 @@ body > header {
 
 .cta-button {
     display: inline-block;
-    background-color: var(--color-secondary);
+    background-color: var(--color-appointment-bg);
     color: var(--color-white);
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--border-radius);
@@ -595,11 +596,11 @@ input[type="checkbox"], input[type="radio"] {
     :root {
         --color-text-main: #f0f0f0;
         --color-text-light: #0a0606;
-        --color-bg-light: #121212;
+        --color-bg: #121212;
         --color-white: #e2e2e2;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         --color-primary: #48cae4; /* Lighter blue for dark mode */
-        --color-appointment: #0c1f23;
+        --color-appointment-bg: #0c1f23;
     }
 
     body {
