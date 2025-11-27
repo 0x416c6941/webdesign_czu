@@ -7,7 +7,8 @@
     --color-text-main: #333333;
     --color-text-light: #666666;
     --color-bg: #f8f9fa;
-    --color-appointment-bg: #0c1f23;
+    /* Color specifically for ".cta-button" selector. */
+    --color-appointment-bg: #48cae4;
     --color-white: #ffffff;
     --color-danger: #e63946;
     --color-success: #2a9d8f;
