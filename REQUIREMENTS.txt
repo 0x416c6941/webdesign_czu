@@ -1,0 +1,137 @@
+Požadavky na projekt (INFO, SYI)
+Požadavky na absolvování
+Obecné
+
+    Všechny požadavky je pro udělení zápočtu nutné všechny splnit
+    Projekty tvoři studenti ve skupinách po čtyřech (min. 3)
+    Projekt se nahrává na moodle
+    Skupinu je nutné vytvořit nejpozději do konce 4. týdne semestru
+        pokud není nahlášena na prvním cvičení, informovat vyučujícího emailem
+
+        pokud student nemůže najít kolegy do projektu, pošle email v tomto termínu vyučujícímu - tým bude přidělen
+
+Téma
+
+    Poskytovatel zdravotních služeb – nemocnice, poliklinika, ordinace, rehabilitace, nebo podobné...
+    Téma je povinné!
+
+Základní požadavky
+
+    Části projektu
+        HTML, CSS
+        Klikatelný prototyp (High-fidelity wireframe)
+        Dokumentace
+    2 možnosti:
+        Úvodní strana + 1 další - Klikatelný prototyp (High-fidelity wireframe) + Všechny strany HTML, CSS
+        Úvodní strana + 1 další - HTML, CSS + Všechny strany klikatelný prototyp (High-fidelity wireframe)
+    Web dává smysl
+        Všechny texty, obrázky, ilustrace nechte vygenerovat AI.
+    Viditelné označení, že se jedná o studentský projekt
+        Ideálně v patičce každé stránky
+    Důraz na UX/použitelnost
+        struktura a informační architektura, navigace, vyhledávání, drobečková navigace, …
+    Samostatné stránky minimálně:
+        Plnohodnotná úvodní stránka (Homepage)
+        Seznam vyšetření/oddělení/lékařů
+        Detail vyšetření/oddělení/lékaře
+        Výsledky vyhledávání (+ vyhledávací box na všech stránkách)
+            Nemusí být funkční, jen ukázka při zadání určitého řetězce
+            Ukázka výsledků - stránka s výsledky (ne "nic jsme nenašli")
+        Kontakt (kudy k nám apod.)
+        Možnost rezervace návštěvy/vyšetření 
+            Kompletní proces
+    Plnohodnotná (rozšířená) patička
+        Plus jména autorů webu
+        Ne, jen copyright + jména
+
+Klikatelný prototyp:
+
+    Plnohodnotný/kompletní web
+        Responzivní, nebo verze pro mobilní telefon a desktop
+    Vše provázané odkazy, všechno klikatelné
+        Např.: odkazy ve výpisu vedou na jeden detail
+    Výstup spustitelný např. ve webové prohlížeči, bez nutnosti instalovat aplikaci
+        Vytvořit v libovolném nástroji
+        Doporučení: Axure RP
+
+HTML + CSS na základě prototypu
+
+    Vychází z prototypu
+        Stejná struktura, stejný, nebo vylepšený vzhled
+    Responzivní design
+        Vytvořeno přístupem Mobile-first
+    Nejnovější HTML5 (ne XHTML, HTML 4)
+    Sémantické elementy (správně použité)
+    Použít správně všechny následující elementy
+        article, section, header, footer, aside, time, table
+        p, img
+        h1, h2, h3
+    Bez použití frameworků a šablon
+    1 soubor s vlastním CSS (alespoň 400 řádků)
+    Využití CSS proměnných (custom properties)
+        Barvy, odsazení, velikost písma
+    Grid layout
+        Alespoň 8 elementů uvnitř
+            Z toho alespoň 2 elementy musí zabírat více buněk (grid cells)
+        Celý prvek nelze jednoduše řešit flexboxem
+    Flexbox
+    Přístupnost alespoň WCAG 2.0 level AA
+        nebo vyšší, novější
+    Vždy relativní adresace
+
+Dokumentace
+
+    Dodržet šablonu včetně formátování
+    Nepsat dlouhé souvislé texty --> spíše klíčové informace v odrážkách
+    Obsah (dodržte názvy hlavních kapitol)
+        Specifikace webu
+            Představení řešeného webu
+            Název a popis zařízení/webu
+            Struktura a stručný popis stránek
+            Cílové skupiny uživatelů
+            Cíl webu, k čemu slouží
+        Požadavky na implementaci
+            To, co nelze jednoduše vyčíst z prototypu 
+            Jak se mají stránky chovat
+            Návrh technologií pro frontend + backend
+                Zdůvodnění
+            Nasazení – hosting, technologie, údržba, analytika, marketing, kontinuální UX …
+        Metodika projektu
+            Postup při tvorbě projektu
+            Software, nástroje, IDE 
+            Využití AI nástrojů při tvorbě projektu 
+                Jaké nástroje
+                Jak byly využity
+                    Postup, Ukázky promptů apod.
+                Kritické zhodnocení přínosů, přesnosti a spolehlivosti
+        Splnění požadavků na projekt
+            Seznam požadavků v pořadí tak jako v tomto dokumentu
+            Popis, jak bylo splněno
+            Ukázka kódu/odkaz na řádek/screenshot
+
+Odevzdání (zip/rar/7z soubor)
+
+    POZOR!
+        Limit velikosti pro nahrávání na moodle!
+    Složka "Web"
+        index.html
+        style.css
+        Volitelně sloška s obrázky a dalšími soubory
+    Složka "Prototyp"
+        Export (HTML, alespoň PDF)
+        Pokud není export plně spustitelný/klikatelný je možné přidat odkaz na tuto formu
+    Soubor "dokumentace.docx"
+
+Hodnocení (celkem 60 bodů)
+
+    Klikatelný prototyp
+        10/30 bodů
+    HTML + CSS pro úvodní stránku na základě prototypu
+        30/10 bodů
+    Dokumentace
+        10 bodů
+    Konzultace projektu – 10 bodů
+        Během k tomu určeného cvičení 
+        Alespoň z 50 % hotovo
+        Připravené konkrétní otázky 
+
