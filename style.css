@@ -1,8 +1,3 @@
-/*
-	MediCare Clinic - Student Project
-	Authors: The webdesign_czu team.
- */
-
 :root {
     /* Palette */
     --color-primary: #0077b6;
@@ -209,7 +204,7 @@ body > header {
     display: grid;
     gap: var(--spacing-md);
     /* Mobile first: 1 column */
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
 }
 
 .grid-item {
@@ -364,7 +359,7 @@ footer {
         background-color: var(--color-primary-light);
 
     }
-    
+
     .nav-container {
         flex-direction: row;
         justify-content: space-between;
@@ -594,47 +589,6 @@ input[type="checkbox"], input[type="radio"] {
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Print Styles */
-@media print {
-    body > header, footer, .search-box, .cta-button, .student-project-notice {
-        display: none !important;
-    }
-
-    body {
-        background-color: white;
-        color: black;
-    }
-
-    .container {
-        width: 100%;
-        max-width: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    
-    a[href]::after {
-        content: " (" attr(href) ")";
-        font-size: 0.8em;
-        color: #666;
-    }
-
-    h1, h2, h3 {
-        page-break-after: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-    
-    @page {
-        margin: 2cm;
-    }
-}
 
 /* Dark Mode Support (Optional but good for "Modern") */
 @media (prefers-color-scheme: dark) {
@@ -653,14 +607,14 @@ input[type="checkbox"], input[type="radio"] {
     }
 
     /* Backgrounds for cards and containers */
-    .grid-item, 
-    article, 
+    .grid-item,
+    article,
     body > header,
     .doctor-card,
     .search-result-item,
     table,
-    .form-group input, 
-    .form-group select, 
+    .form-group input,
+    .form-group select,
     .form-group textarea,
     .search-box input,
     form,
@@ -717,7 +671,7 @@ input[type="checkbox"], input[type="radio"] {
     a {
         color: var(--color-secondary);
     }
-    
+
     a:hover {
         color: var(--color-accent);
     }
@@ -726,7 +680,7 @@ input[type="checkbox"], input[type="radio"] {
     .main-nav a {
         color: var(--color-text-main);
     }
-    
+
     .main-nav a:hover, .main-nav a.active {
         color: var(--color-secondary);
     }
@@ -785,4 +739,3 @@ input[type="checkbox"], input[type="radio"] {
         border-top-color: #333;
     }
 }
-
