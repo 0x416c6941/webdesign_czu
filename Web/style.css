@@ -71,6 +71,14 @@ body > header {
     z-index: 0;
 }
 
+#header-top {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-xs) 0;
+    font-size: var(--text-sm);
+}
+
 /* Purely a layout container to add padding on left and right. */
 .container {
     width: 100%;
@@ -81,7 +89,7 @@ body > header {
     padding: 0 var(--spacing-md);
 }
 
-.nav-container {
+#nav-container {
     /* Since we'll have a 2D field of buttons, "display: flex" is the best option. */
     display: flex;
     flex-direction: column;
@@ -90,10 +98,28 @@ body > header {
     padding: var(--spacing-md) 0;
 }
 
-#logo {
+#nav-logo {
+    color: var(--color-primary);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: var(--text-xl);
     font-weight: 700;
+}
+
+#nav-main ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+#nav-main a {
+    color: var(--color-text-main);
+    font-weight: 500;
+    padding: 0.5rem;
+    display: block;
+}
+
+#nav-main a:hover, #nav-main a.active {
     color: var(--color-primary);
 }
 
@@ -115,35 +141,6 @@ a:hover {
 
 ul {
     list-style: none;
-}
-
-.header-top {
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
-    padding: var(--spacing-xs) 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    font-size: var(--text-sm);
-    text-align: center;
-}
-
-.main-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    justify-content: center;
-}
-
-.main-nav a {
-    color: var(--color-text-main);
-    font-weight: 500;
-    padding: 0.5rem;
-    display: block;
-}
-
-.main-nav a:hover, .main-nav a.active {
-    color: var(--color-primary);
 }
 
 /* Search Box (Required on all pages) */
@@ -369,12 +366,12 @@ footer {
 
     }
 
-    .nav-container {
+    #nav-container {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .main-nav ul {
+    #nav-main ul {
         gap: var(--spacing-md);
     }
 
@@ -686,11 +683,11 @@ input[type="checkbox"], input[type="radio"] {
     }
 
     /* Text colors in specific contexts */
-    .main-nav a {
+    #nav-main a {
         color: var(--color-text-main);
     }
 
-    .main-nav a:hover, .main-nav a.active {
+    #nav-main a:hover, #nav-main a.active {
         color: var(--color-secondary);
     }
 

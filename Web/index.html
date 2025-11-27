@@ -18,28 +18,28 @@
     </div>
 
     <header>
-        <div class="header-top">
+        <div id="header-top">
             <!-- This may seem out of context, but some facilities
                  provide their opening hours and contact near to the top of the page.
                  It may be useful to the user. -->
             <span>Otevřeno: Po-Pá 8:00 - 18:00 | Tel.: +420 123 456 789</span>
         </div>
 
-        <div class="container nav-container">
-            <a id="nav-logo" href="index.html">
-                <img src="Assets/logo.png" alt="Logo">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="doctors.html">Lékaři & Oddělení</a></li>
-                    <li><a href="reservation.html">Rezervace</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
-            <form action="search.html" method="get" class="search-box">
-                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
-                <button type="submit">Hledat</button>
-            </form>
+        <div class="container">
+            <div id="nav-container">
+                <a id="nav-logo" href="index.html">MediCare</a>
+                <nav id="nav-main">
+                    <ul>
+                        <li><a href="doctors.html">Lékaři & Oddělení</a></li>
+                        <li><a href="reservation.html">Rezervace</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+                <form action="search.html" method="get" class="search-box">
+                    <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                    <button type="submit">Hledat</button>
+                </form>
+            </div>
         </div>
     </header>
 
