@@ -41,14 +41,14 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--color-text-main);
-    line-height: 1.6;
-    background-color: var(--color-bg);
     display: flex;
     flex-direction: column;
     /* Height may theoretically go for more than 100% of the viewport. */
     min-height: 100vh;
+    background-color: var(--color-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-main);
+    line-height: 1.6;
 }
 
 #student-project-notice {
@@ -81,6 +81,22 @@ body > header {
     padding: 0 var(--spacing-md);
 }
 
+.nav-container {
+    /* Since we'll have a 2D field of buttons, "display: flex" is the best option. */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+#logo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -110,22 +126,6 @@ ul {
     z-index: 1000;
     font-size: var(--text-sm);
     text-align: center;
-}
-
-/* Mobile First Navigation */
-.nav-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    align-items: center;
-    padding: var(--spacing-md) 0;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-primary);
 }
 
 .main-nav ul {
