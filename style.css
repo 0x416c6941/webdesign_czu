@@ -82,18 +82,22 @@ ul {
 }
 
 /* Header & Nav */
+/*
 body > header {
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
-    position: sticky;
     top: 0;
     z-index: 1000;
 }
+ */
 
 .header-top {
     background-color: var(--color-primary-dark);
     color: var(--color-white);
     padding: var(--spacing-xs) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     font-size: var(--text-sm);
     text-align: center;
 }
