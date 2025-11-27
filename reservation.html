@@ -185,21 +185,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Hide search box on scroll (mobile only)
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', function() {
-            if (window.innerWidth <= 767) {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > 100) {
-                    document.body.classList.add('scrolled');
-                } else {
-                    document.body.classList.remove('scrolled');
-                }
-            }
-        });
-    </script>
 </body>
 </html>
 
