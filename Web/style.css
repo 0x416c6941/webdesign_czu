@@ -6,14 +6,14 @@
     --color-text-light: #929292;
     --color-primary: #0077b6;
     --color-primary-dark: #023e8a;
+    --color-warning: #e63946;           /* "#student-project-notice". */
+    --color-white: #ffffff;             /* For dark mode. */
     --color-secondary: #48cae4;
     --color-accent: #90e0ef;
     --color-appointment-bg: #48cae4;    /* ".cta-button" (to tweak dark mode). */
-    --color-white: #ffffff;             /* For dark mode. */
     --color-success: #2a9d8f;
-    --color-warning: #e63946;           /* "#student-project-notice". */
 
-    /* Spacing */
+    /* Spacing. */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -24,11 +24,11 @@
      * Some selectors may still use their own unique values. */
     --text-sm: 0.875rem;
     --text-base: 1rem;
-    --text-lg: 1.25rem;
+    --text-lg: 1.25rem;     /* Unused. */
     --text-xl: 1.5rem;
-    --text-2xl: 2rem;
+    --text-2xl: 2rem;       /* Unused. */
 
-    /* Borders & Shadows */
+    /* Borders and shadows. */
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
@@ -89,12 +89,13 @@ body > header {
     padding: 0 var(--spacing-md);
 }
 
+/* -------- Row with home page, navigation menu and search field. -------- */
 #nav-container {
     /* Since we'll have a 2D field of buttons, "display: flex" is the best option. */
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
     align-items: center;
+    gap: var(--spacing-xs);         /* Also centers a div vertically. */
     padding: var(--spacing-md) 0;
 }
 
@@ -113,14 +114,37 @@ body > header {
 }
 
 #nav-main a {
+    display: block;                 /* For padding to work. */
     color: var(--color-text-main);
     font-weight: 500;
     padding: 0.5rem;
-    display: block;
 }
 
 #nav-main a:hover, #nav-main a.active {
     color: var(--color-primary);
+}
+
+#search-box {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+    transition: opacity 30s ease, max-height 30s ease;
+}
+
+#search-box input {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    flex-grow: 1;                                   /* Fill available space. */
+}
+
+#search-box button {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
 }
 
 img {
@@ -143,40 +167,15 @@ ul {
     list-style: none;
 }
 
-/* Search Box (Required on all pages) */
-.search-box {
-    display: flex;
-    gap: var(--spacing-xs);
-    width: 100%;
-    max-width: 400px; /* Limit width on mobile */
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-}
-
 /* Hide search on scroll (mobile only) */
 @media (max-width: 767px) {
-    body.scrolled .search-box {
+    body.scrolled #search-box {
         opacity: 0;
         max-height: 0;
         overflow: hidden;
         margin: 0;
         padding: 0;
     }
-}
-
-.search-box input {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    flex-grow: 1; /* Fill available space */
-}
-
-.search-box button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
 }
 
 /* Hero Section */
@@ -375,7 +374,7 @@ footer {
         gap: var(--spacing-md);
     }
 
-    .search-box {
+    #search-box {
         width: auto;
     }
 
@@ -622,7 +621,7 @@ input[type="checkbox"], input[type="radio"] {
     .form-group input,
     .form-group select,
     .form-group textarea,
-    .search-box input,
+    #search-box input,
     form,
     fieldset {
         background-color: #1e1e1e !important;
