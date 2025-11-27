@@ -604,7 +604,6 @@ input[type="checkbox"], input[type="radio"] {
 @media (prefers-color-scheme: dark) {
     :root {
         --color-text-main: #f0f0f0;
-        --color-text-light: #0a0606;
         --color-bg: #121212;
         --color-white: #e2e2e2;
         --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
