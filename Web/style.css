@@ -43,6 +43,8 @@
     --transition-shadow-time: 0.2s;
 }
 
+/* Make margins and paddings predictable by default
+ * by, well, not having any at all :p */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -52,21 +54,27 @@
 body {
     display: flex;
     flex-direction: column;
+
     /* Height may theoretically go for more than 100% of the viewport. */
     min-height: 100vh;
-    background-color: var(--color-bg);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--color-text-main);
     line-height: 1.6;
+
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    /* Thanks to Google Gemini for suggesting some fonts. */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #student-project-notice {
     background-color: var(--color-warning);
-    color: white;
+    color: white;                           /* Just white. Always. */
+
     text-align: center;
-    padding: 5px;
-    font-size: 0.8rem;
     font-weight: bold;
+    font-size: 0.8rem;
+
+    padding: 5px;
+
     position: sticky;
     top: 0px;
     z-index: 20;
@@ -83,15 +91,18 @@ body > header {
 #header-top {
     background-color: var(--color-header-top);
     color: var(--color-white);
+
     text-align: center;
-    padding: var(--spacing-xs) 0;
     font-size: var(--text-sm);
+
+    padding: var(--spacing-xs) 0;
 }
 
 /* Purely a layout container to add padding on left and right. */
 .container {
     width: 100%;
     max-width: 1200px;
+
     /* margin: <top-bottom> <left-right>. */
     margin: 0 auto;
     /* Same story: padding: <top-bottom> <left-right>. */
@@ -104,6 +115,7 @@ body > header {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: var(--spacing-xs);         /* Also centers a div vertically. */
     padding: var(--spacing-md) 0;
 }
@@ -121,14 +133,17 @@ body > header {
 #nav-main ul {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
+
     justify-content: center;
+    gap: var(--spacing-sm);
 }
 
 #nav-main a {
     display: block;                 /* For padding to work. */
+
     color: var(--color-text-main);
     font-weight: 500;
+
     padding: 0.5rem;
 }
 
@@ -138,23 +153,28 @@ body > header {
 
 #search-box {
     display: flex;
+
     gap: var(--spacing-sm);
     width: 100%;
 }
 
 #search-box input {
+    flex-grow: 1;                                   /* Fill available space. */
+
     padding: var(--spacing-sm) var(--spacing-sm);
     border: 1px solid #ddd;
     border-radius: var(--border-radius);
-    flex-grow: 1;                                   /* Fill available space. */
 }
 
 #search-box button {
     background-color: var(--color-button);
     color: var(--color-white);
+
+    padding: var(--spacing-sm) var(--spacing-sm);
     border: none;
     border-radius: var(--border-radius);
-    padding: var(--spacing-sm) var(--spacing-sm);
+
+    /* "cursor: unset;" would also look good. */
     cursor: pointer;
 }
 
@@ -165,8 +185,8 @@ body > header {
     /* To hide parts of the image, that "overflow" the edges. */
     overflow: hidden;
 
-    text-align: center;
     color: var(--color-white);
+    text-align: center;
     text-shadow: 3px 6px 8px #000000;
     padding: var(--spacing-xl) 0;
 
@@ -177,6 +197,7 @@ body > header {
 #hero::before {
     /* "::before" pseudoelement can't exist without this thing. */
     content: "";
+
     position: absolute;
     top: 0;
     left: 0;
@@ -184,7 +205,7 @@ body > header {
     height: 100%;
 
     background: url('Assets/logo.png') center/cover no-repeat;
-    filter: blur(4px) brightness(0.4);
+    filter: blur(3px) brightness(0.3);
     transform: scale(1.25);
 
     /* Ensuring the layer goes under the text. */
@@ -207,7 +228,7 @@ body > header {
 
     border-radius: var(--border-radius);
     padding: var(--spacing-md) var(--spacing-lg);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 
     transition: background-color var(--transition-color-time);
 }
@@ -216,6 +237,8 @@ body > header {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
+
+/* -------- Introduction section. -------- */
 
 img {
     max-width: 100%;
@@ -381,7 +404,7 @@ footer {
      * for the mobile version and doesn't look good on the PC/desktop. */
     #hero::before {
         background: url('Assets/logo_desktop.png') center/cover no-repeat;
-        filter: blur(7.5px) brightness(0.4);
+        filter: blur(5px) brightness(0.3);
         transform: scale(1.05);
     }
 
