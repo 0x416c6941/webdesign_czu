@@ -166,6 +166,10 @@ body > header {
     border-radius: var(--border-radius);
 }
 
+#search-box input:focus {
+    outline: none;
+}
+
 #search-box button {
     background-color: var(--color-button);
     color: var(--color-white);
@@ -239,6 +243,9 @@ body > header {
 }
 
 /* -------- Introduction section. -------- */
+#introduction {
+    margin: 2rem 0;
+}
 
 img {
     max-width: 100%;
@@ -401,11 +408,18 @@ footer {
     }
 
     /* Logo used in the "hero" section was originally generated
-     * for the mobile version and doesn't look good on the PC/desktop. */
+     * for the mobile version and doesn't look good on the PC/desktop.
+     * Well... It could look better, but it's not our fault,
+     * rather it's a limitation of the image generator in Google Gemini. */
     #hero::before {
         background: url('Assets/logo_desktop.png') center/cover no-repeat;
         filter: blur(5px) brightness(0.3);
         transform: scale(1.05);
+    }
+
+    #introduction {
+        /* Looks better on a PC/desktop. */
+        margin: 2rem;
     }
 
     .grid-container {
