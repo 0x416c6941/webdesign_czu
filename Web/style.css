@@ -33,7 +33,7 @@
     /* Borders. */
     --border-radius: 8px;
 
-    /* Shadows (will only be present in dark theme). */
+    /* Shadows. */
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
     --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.5);
 
@@ -167,6 +167,9 @@ body > header {
 }
 
 #search-box input:focus {
+    /* Good stuff. We can't apply it everywhere though,
+     * because that would be a violation of WCAG 2.0 level AA.
+     * Well, I think... */
     outline: none;
 }
 
@@ -192,8 +195,8 @@ body > header {
     color: var(--color-white);
     text-align: center;
     text-shadow: 3px 6px 8px #000000;
-    padding: var(--spacing-xl) 0;
 
+    padding: var(--spacing-xl) 0;
     box-shadow: var(--box-shadow);
     z-index: 5;
 }
@@ -211,7 +214,6 @@ body > header {
     background: url('Assets/logo.png') center/cover no-repeat;
     filter: blur(3px) brightness(0.3);
     transform: scale(1.25);
-
     /* Ensuring the layer goes under the text. */
     z-index: -10;
 }
@@ -242,15 +244,12 @@ body > header {
     color: var(--color-white);
 }
 
-/* -------- Introduction section. -------- */
-#introduction {
-    margin: 2rem 0;
-}
-
+/* -------- Misc. stuff. -------- */
 img {
+    display: block;
+
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
 a {
@@ -267,23 +266,42 @@ ul {
     list-style: none;
 }
 
-/* Grid Layout Requirement: Departments */
-.departments-section {
+/* -------- Introduction section (home page). -------- */
+#introduction {
+    margin: 2rem 0;
+}
+
+#introduction p br {
+    display: block;
+
+    content: "";                    /* Required for some browsers. */
+    margin-top: var(--spacing-md);
+}
+
+/* -------- Departments section  (home page). -------- */
+#departments {
+    /* Adding some padding between introduction and departments. */
     padding: var(--spacing-xl) 0;
 }
 
 .grid-container {
     display: grid;
+
     gap: var(--spacing-md);
-    /* Mobile first: 1 column */
+    /* On mobile devices, the grid should really look like a column flex.
+     * It doesn't make much sense otherwise.
+     * The "2 elements, spanning multiple cells" requirement
+     * will be fulfilled on the desktop version. */
     grid-template-columns: 1fr;
 }
 
 .grid-item {
     background: var(--color-white);
-    padding: var(--spacing-md);
+
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    padding: var(--spacing-md);
+
     transition:
         transform var(--transition-transform-time),
         box-shadow var(--transition-shadow-time);
@@ -292,6 +310,13 @@ ul {
 .grid-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--box-shadow-hover);
+}
+
+.grid-item p br {
+    display: block;
+
+    content: "";                    /* Required for some browsers. */
+    margin-top: var(--spacing-sm);
 }
 
 /* Doctor Cards */
@@ -404,7 +429,7 @@ footer {
 /* Media Queries for Desktop/Tablet */
 @media (min-width: 768px) {
     .container {
-        padding: 0 var(--spacing-lg); /* More padding on desktop */
+        padding: 0 var(--spacing-lg);   /* More padding on desktop */
     }
 
     /* Logo used in the "hero" section was originally generated
@@ -420,6 +445,12 @@ footer {
     #introduction {
         /* Looks better on a PC/desktop. */
         margin: 2rem;
+    }
+
+    #introduction p br {
+        /* We don't need additional margin between line breaks
+         * in introductory paragraph here. */
+        margin-top: 0;
     }
 
     .grid-container {
@@ -679,17 +710,20 @@ input[type="checkbox"], input[type="radio"] {
         --color-text-main: #f0f0f0;
         --color-bg: #121212;
         --color-white: #e2e2e2;
-        --color-primary: #48cae4;                   /* Lighter blue for dark mode. */
+        --color-primary: #44b7cf;           /* Lighter blue for dark mode. */
         --color-button: #0077b6;
-        --color-appointment-bg: #48cae4;
-
-        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
+        --color-appointment-bg: #3597ab;
     }
 
     body {
         background-color: #121212;
         color: var(--color-text-main);
+    }
+
+    #cta-button:hover {
+        /* The effect of color changing on hover
+         * doesn't look good on dark theme. */
+        background-color: var(--color-appointment-bg);
     }
 
     /* Backgrounds for cards and containers */
@@ -789,11 +823,6 @@ input[type="checkbox"], input[type="radio"] {
     option {
         background-color: #1e1e1e;
         color: var(--color-text-main);
-    }
-
-    /* Departments section background */
-    .departments-section.bg-light {
-        background-color: #121212 !important;
     }
 
     /* Aside box */
