@@ -168,7 +168,7 @@ body > header {
 
 #search-box input:focus {
     /* Good stuff. We can't apply it everywhere though,
-     * because that would be a violation of WCAG 2.0 level AA.
+     * because that would be a violation of WCAG.
      * Well, I think... */
     outline: none;
 }
