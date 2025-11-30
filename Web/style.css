@@ -265,6 +265,7 @@ img {
     height: auto;
 }
 
+/* TODO: yo, check which elements actually satisfy these selectors. */
 a {
     text-decoration: none;
     color: var(--color-primary);
@@ -274,6 +275,7 @@ a {
 a:hover {
     color: var(--color-primary-dark);
 }
+/* END OF TODO. */
 
 ul {
     list-style: none;
