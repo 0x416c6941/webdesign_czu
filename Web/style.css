@@ -12,7 +12,7 @@
     --color-button: #0077b6;            /* "#search-box button". */
     --color-secondary: #48cae4;
     --color-accent: #90e0ef;
-    --color-appointment-bg: #48cae4;    /* ".cta-button" (to tweak dark mode). */
+    --color-appointment-bg: #0c1f23;    /* "#cta-button" (to tweak dark mode). */
     --color-success: #2a9d8f;
 
     /* Spacing. */
@@ -26,14 +26,21 @@
      * Some selectors may still use their own unique values. */
     --text-sm: 0.875rem;
     --text-base: 1rem;
-    --text-lg: 1.25rem;     /* Unused. */
+    --text-lg: 1.25rem;     /* Unused (yet?). */
     --text-xl: 1.5rem;
-    --text-2xl: 2rem;       /* Unused. */
+    --text-2xl: 2rem;       /* "#hero h1". */
 
-    /* Borders and shadows. */
+    /* Borders. */
     --border-radius: 8px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
+
+    /* Shadows (will only be present in dark theme). */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.5);
+
+    /* Transition timings. */
+    --transition-color-time: 0.3s;      /* Same for both "background-color" and "color". */
+    --transition-transform-time: 0.2s;
+    --transition-shadow-time: 0.2s;
 }
 
 * {
@@ -62,7 +69,7 @@ body {
     font-weight: bold;
     position: sticky;
     top: 0px;
-    z-index: 1;
+    z-index: 20;
 }
 
 /* Header with opening hours and telephone number, and navigation. */
@@ -70,7 +77,7 @@ body > header {
     box-shadow: var(--box-shadow);
     /* Need to explicitly specify a layer (z-index) for shadows to appear.
      * Thanks to Google Gemini for pointing this out. */
-    z-index: 0;
+    z-index: 10;
 }
 
 #header-top {
@@ -108,6 +115,9 @@ body > header {
     font-weight: 700;
 }
 
+/* "flex-wrap: wrap;" would look ugly if we had two many list nodes.
+ * In this case, we could've used "flex-wrap: nowrap;" and "overflow-x: auto;".
+ * Still, in our case, this looks decent. */
 #nav-main ul {
     display: flex;
     flex-wrap: wrap;
@@ -130,7 +140,6 @@ body > header {
     display: flex;
     gap: var(--spacing-sm);
     width: 100%;
-    transition: opacity 30s ease, max-height 30s ease;
 }
 
 #search-box input {
@@ -148,32 +157,62 @@ body > header {
     padding: var(--spacing-sm) var(--spacing-sm);
     cursor: pointer;
 }
+
 /* -------- Hero section. -------- */
 #hero {
-    background: linear-gradient(rgba(0,119,182,0.8), rgba(0,119,182,0.8)), url('https://placehold.co/1200x600/eee/333?text=Hospital+Image');
-    background-size: cover;
-    background-position: center;
-    color: var(--color-white);
-    padding: var(--spacing-xl) 0;
+    /* Necessary to keep ::before contained within this block. */
+    position: relative;
+    /* To hide parts of the image, that "overflow" the edges. */
+    overflow: hidden;
+
     text-align: center;
+    color: var(--color-white);
+    text-shadow: 3px 6px 8px #000000;
+    padding: var(--spacing-xl) 0;
+
+    box-shadow: var(--box-shadow);
+    z-index: 5;
+}
+
+#hero::before {
+    /* "::before" pseudoelement can't exist without this thing. */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url('Assets/logo.png') center/cover no-repeat;
+    filter: blur(4px) brightness(0.4);
+    transform: scale(1.25);
+
+    /* Ensuring the layer goes under the text. */
+    z-index: -10;
 }
 
 #hero h1 {
-    font-size: 2.5rem;
+    font-size: var(--text-2xl);
     margin-bottom: var(--spacing-md);
 }
 
-.cta-button {
+#cta-button {
+    /* "inline" screws the padding,
+     * while "block" makes the button too thicc :( */
     display: inline-block;
+
     background-color: var(--color-appointment-bg);
     color: var(--color-white);
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius);
     font-weight: bold;
+
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md) var(--spacing-lg);
     margin-top: var(--spacing-md);
+
+    transition: background-color var(--transition-color-time);
 }
 
-.cta-button:hover {
+#cta-button:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
@@ -187,7 +226,7 @@ img {
 a {
     text-decoration: none;
     color: var(--color-primary);
-    transition: color 0.3s ease;
+    transition: color var(--transition-color-time);
 }
 
 a:hover {
@@ -215,11 +254,14 @@ ul {
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform 0.2s;
+    transition:
+        transform var(--transition-transform-time),
+        box-shadow var(--transition-shadow-time);
 }
 
 .grid-item:hover {
     transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
 }
 
 /* Doctor Cards */
@@ -333,6 +375,14 @@ footer {
 @media (min-width: 768px) {
     .container {
         padding: 0 var(--spacing-lg); /* More padding on desktop */
+    }
+
+    /* Logo used in the "hero" section was originally generated
+     * for the mobile version and doesn't look good on the PC/desktop. */
+    #hero::before {
+        background: url('Assets/logo_desktop.png') center/cover no-repeat;
+        filter: blur(7.5px) brightness(0.4);
+        transform: scale(1.05);
     }
 
     .grid-container {
@@ -585,16 +635,19 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 
-/* Dark Mode Support (Optional but good for "Modern") */
+/* Dark mode settings. */
 @media (prefers-color-scheme: dark) {
     :root {
+        /* Colors. */
         --color-text-main: #f0f0f0;
         --color-bg: #121212;
         --color-white: #e2e2e2;
-        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        --color-primary: #48cae4;                   /* Lighter blue for dark mode */
+        --color-primary: #48cae4;                   /* Lighter blue for dark mode. */
         --color-button: #0077b6;
-        --color-appointment-bg: #0c1f23;
+        --color-appointment-bg: #48cae4;
+
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.15);
     }
 
     body {
