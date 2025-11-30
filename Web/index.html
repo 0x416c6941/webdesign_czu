@@ -69,9 +69,10 @@
 
             <section id="departments">
                 <h2>Naše oddělení</h2>
-                <!-- Grid layout requirement: 8 elements minimum, 2 spanning multiple cells. -->
-                <div class="grid-container">
-                    <div class="grid-item">
+                <!-- "ul" and "li" don't make sense here, since it's not a list.
+                     It's a, well, grid. -->
+                <div id="departments-container">
+                    <div class="departments-container-item">
                         <img src="Assets/general_practitioner.png" alt="Všeobecné praktické lékařství">
                         <h3>Všeobecné praktické lékařství</h3>
                         <p>
@@ -82,7 +83,7 @@
                             Díky přímé návaznosti na naše specialisty vám navíc garantujeme rychlé řešení zdravotních potíží bez zbytečného čekání.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/cardiology_and_internal_medicine.png" alt="Kardiologie a interní medicina">
                         <h3>Kardiologie a interní medicína</h3>
                         <p>
@@ -91,7 +92,7 @@
                             Využíváme moderní metody (EKG, ECHO) pro včasné odhalení a léčbu onemocnění.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/orthopedics_and_raumatology.png" alt="Ortopedie a traumatologie">
                         <h3>Ortopedie a traumatologie</h3>
                         <p>
@@ -100,7 +101,7 @@
                             Pomáháme vám k rychlému návratu do aktivního života.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/stomatology.png" alt="Stomatologie">
                         <h3>Stomatologie</h3>
                         <p>
@@ -109,7 +110,7 @@
                             Nabízíme vše od dentální hygieny přes bělení až po zubní implantáty.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/diagnostics.png" alt="Diagnostika">
                         <h3>Diagnostické centrum</h3>
                         <p>
@@ -120,7 +121,7 @@
                             Výsledky okamžitě sdílíme s ošetřujícími lékaři v rámci kliniky, což umožňuje bezprostřední zahájení té správné léčby.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/gynekology.png" alt="Gynekologie">
                         <h3>Gynekologie</h3>
                         <p>
@@ -129,7 +130,7 @@
                             Zajišťujeme prevenci i odborné vedení těhotenství.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/dermatology_and_esthetics.png" alt="Dermatologie a estetika">
                         <h3>Dermatologie a estetika</h3>
                         <p>
@@ -138,7 +139,7 @@
                             Postaráme se o zdraví vaší kůže i omlazení pleti.
                         </p>
                     </div>
-                    <div class="grid-item">
+                    <div class="departments-container-item">
                         <img src="Assets/neurology.png" alt="Neurologie">
                         <h3>Neurologie</h3>
                         <p>
@@ -149,19 +150,48 @@
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!-- Replace with article? -->
-        <aside class="container" style="margin-bottom: 2rem;">
-            <h3>Aktuality</h3>
-            <!-- Replace to list with items. -->
-            <div style="background-color: #eef; padding: 1rem; border-left: 5px solid var(--color-primary);">
-                <!-- Generate some entries here wtih Gemini
-                     and also set datetime to something more up-to-date. -->
-                <time datetime="2023-11-22">22. Listopad 2023</time>
-                <p>Zahájili jsme očkování proti chřipce. Rezervujte si termín online.</p>
-            </div>
-        </aside>
+            <section id="news">
+                <!-- News are less important than departments,
+                     therefore using "h3" here. -->
+                <h3>Aktuality</h3>
+                <div id="news-container">
+                    <article class="news-container-item">
+                        <time datetime="2025-11-15">15. 11. 2025</time>
+                        <div class="news-content">
+                            <h4>Investujeme do přesnější diagnostiky: Nový špičkový ultrazvuk</h4>
+                            <p>
+                                Naše diagnostické centrum jsme vybavili nejnovější generací ultrazvukového přístroje s vyšším rozlišením.
+                                <br>
+                                Tato technologie nám umožňuje ještě detailnější vyšetření a včasnější odhalení zdravotních rizik, zejména v kardiologii a prenatální péči.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="news-container-item">
+                        <time datetime="2025-10-01">1. 10. 2025</time>
+                        <div class="news-content">
+                            <h4>Zahajujeme očkování proti sezónní chřipce</h4>
+                            <p>
+                                Připravte svou imunitu na nadcházející sezónu a chraňte sebe i své blízké.
+                                <br>
+                                Vakcíny jsou již k dispozici v ordinacích praktických lékařů a na termín očkování se můžete snadno objednat přes náš online systém.
+                            </p>
+                            </div>
+                    </article>
+                    <article class="news-container-item">
+                        <time datetime="2025-09-20">20. 9. 2025</time>
+                        <div class="news-content">
+                            <h4>Posilujeme tým stomatologie a dentální hygieny</h4>
+                            <p>
+                                S radostí vítáme nové kolegy v našem stomatologickém oddělení.
+                                <br>
+                                Díky rozšíření týmu jsme navýšili kapacity a výrazně zkrátili čekací lhůty na preventivní prohlídky i profesionální dentální hygienu.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
