@@ -84,6 +84,18 @@ body {
     margin-top: var(--spacing-md);
 }
 
+/* Purely a layout container to add padding on left and right. */
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    /* margin: <top-bottom> <left-right>. */
+    margin: 0 auto;
+    /* Same story: padding: <top-bottom> <left-right>. */
+    padding: 0 var(--spacing-md);
+}
+
+/* -------- Basically header beginning. -------- */
 #student-project-notice {
     background-color: var(--color-warning);
     color: white;                           /* Just white. Always. */
@@ -115,17 +127,6 @@ body > header {
     font-size: var(--text-sm);
 
     padding: var(--spacing-xs) 0;
-}
-
-/* Purely a layout container to add padding on left and right. */
-.container {
-    width: 100%;
-    max-width: 1200px;
-
-    /* margin: <top-bottom> <left-right>. */
-    margin: 0 auto;
-    /* Same story: padding: <top-bottom> <left-right>. */
-    padding: 0 var(--spacing-md);
 }
 
 /* -------- Row with home page, navigation menu and search field. -------- */
@@ -362,66 +363,22 @@ ul {
     margin-bottom: var(--spacing-xs);
 }
 
-
-/* TODO. */
-/* Doctor Cards */
-.doctor-card {
-    flex: 1 1 300px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-white);
-}
-
-.doctor-card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-}
-
-.doctor-card-specialty {
-    color: var(--color-primary);
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.doctor-card-footer {
-    padding: 1rem;
-    background: #f9f9f9;
-    border-top: 1px solid #eee;
-}
-
-.doctor-card-link {
-    font-weight: bold;
-}
-
-/* Search Results */
-.search-results {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-}
-
-.search-result-item {
-    background: var(--color-white);
-    padding: var(--spacing-md);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-}
-
-/* Footer */
+/* -------- Footer. -------- */
 footer {
     background-color: var(--color-text-main);
     color: var(--color-white);
+
+    /* padding: <up> <left-right> <bottom>. */
     padding: var(--spacing-xl) 0 var(--spacing-md);
+
+    /* Let's just hope the browser isn't stupid. */
     margin-top: auto;
 }
 
-.footer-content {
+#footer-content {
     display: flex;
     flex-wrap: wrap;
+
     gap: var(--spacing-lg);
     justify-content: space-between;
 }
@@ -432,48 +389,34 @@ footer {
 }
 
 .footer-column h3 {
-    margin-bottom: var(--spacing-md);
     color: var(--color-secondary);
+
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-column a {
+    color: #ccc;
+}
+
+.footer-column address {
+    font-style: normal;
 }
 
 .footer-bottom {
+    color: #888;
+
+    text-align: center;
+    font-size: var(--text-sm);
+
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
     border-top: 1px solid #444;
-    text-align: center;
-    font-size: var(--text-sm);
-    color: #888;
 }
 
-/* Detail Page Responsive Layout */
-.detail-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-/* Form Grid Layout */
-.form-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-/* Table Responsive Wrapper */
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid #eee;
-    border-radius: var(--border-radius);
-}
-
-/* Media Queries for Desktop/Tablet */
+/* -------- Media queries for desktop/tablet. -------- */
 @media (min-width: 768px) {
     .container {
-        padding: 0 var(--spacing-lg);   /* More padding on desktop */
+        padding: 0 var(--spacing-lg);   /* More padding on desktop. */
     }
 
     #nav-container {
@@ -533,6 +476,8 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
+
+    /* ------------------------------ TODO. ------------------------------ */
     .detail-grid {
         grid-template-columns: 1fr 2fr;
     }
@@ -554,6 +499,82 @@ footer {
 }
 
 
+/* TODO. */
+/* Doctor Cards */
+.doctor-card {
+    flex: 1 1 300px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+}
+
+.doctor-card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.doctor-card-specialty {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.doctor-card-footer {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.doctor-card-link {
+    font-weight: bold;
+}
+
+/* Search Results */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.search-result-item {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+
+/* Detail Page Responsive Layout */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Form Grid Layout */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Table Responsive Wrapper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+}
+
+
+
 /* Forms */
 .form-group {
     margin-bottom: var(--spacing-md);
@@ -571,7 +592,6 @@ footer {
     border: 1px solid #ccc;
     border-radius: var(--border-radius);
 }
-
 
 /* Breadcrumbs */
 .breadcrumbs {
