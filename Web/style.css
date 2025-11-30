@@ -11,7 +11,7 @@
     --color-primary-hover: #023e8a;     /* "a:hover". */
     --color-button: #0077b6;            /* "#search-box button". */
     --color-secondary: #48cae4;
-    --color-accent: #90e0ef;
+    --color-accent: #4d8d99;
     --color-appointment-bg: #0c1f23;    /* "#cta-button" (to tweak dark mode). */
     --color-success: #2a9d8f;
 
@@ -49,6 +49,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* Accessibility for focus, however only for keyboard (eye candy). */
+:focus {
+    outline: none;
+}
+/* Keyboard only. */
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 body {
@@ -164,13 +175,6 @@ body > header {
     padding: var(--spacing-sm) var(--spacing-sm);
     border: 1px solid #ddd;
     border-radius: var(--border-radius);
-}
-
-#search-box input:focus {
-    /* Good stuff. We can't apply it everywhere though,
-     * because that would be a violation of WCAG.
-     * Well, I think... */
-    outline: none;
 }
 
 #search-box button {
@@ -400,7 +404,6 @@ footer {
     color: #888;
 }
 
-
 /* Detail Page Responsive Layout */
 .detail-grid {
     display: grid;
@@ -506,11 +509,6 @@ footer {
     }
 }
 
-/* Accessibility & Focus */
-:focus {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 2px;
-}
 
 /* Forms */
 .form-group {
@@ -701,7 +699,6 @@ input[type="checkbox"], input[type="radio"] {
 .fade-in {
     animation: fadeIn 0.5s ease-out forwards;
 }
-
 
 /* Dark mode settings. */
 @media (prefers-color-scheme: dark) {
