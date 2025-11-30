@@ -2,36 +2,47 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
+    <!-- Responsive layout didn't work without this, despite us using media queries in CSS.
+         Thanks to Google Gemini for helping us to figure this thing out... -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - MediCare</title>
+    <title>MediCare - kontakt</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Metadata aren't required, but this one is quite basic. -->
+    <meta name="description" content="Poliklinika MediCare - domácí stránka.">
 </head>
+
 <body>
-    <div class="student-project-notice">
-        UPOZORNĚNÍ: Toto je studentský projekt.
+    <div id="student-project-notice">
+        UPOZORNĚNÍ: Toto je studentský projekt vytvořený pro vzdělávací účely.
+        Nejedná se o skutečné zdravotnické zařízení.
     </div>
 
     <header>
-        <div class="header-top">
-            <div class="container">
-                <span>Otevřeno: Po-Pá 7:00 - 18:00 | Tel: +420 123 456 789</span>
+        <div id="header-top">
+            <!-- This may seem out of context, but some facilities
+                 provide their opening hours and contact near to the top of the page.
+                 It may be useful to the user. -->
+            <span>Otevřeno: Po-Pá 8:00 - 18:00 | Tel.: +420 123 456 789</span>
+        </div>
+
+        <div class="container">
+            <div id="nav-container">
+                <a id="nav-logo" href="index.html">MediCare</a>
+                <nav id="nav-main">
+                    <ul>
+                        <li><a href="doctors.html">Lékaři & Oddělení</a></li>
+                        <li><a href="reservation.html">Rezervace</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+                <form id="search-box" method="get" action="search.html">
+                    <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
+                    <button type="submit">🔍</button>
+                </form>
             </div>
         </div>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">MediCare</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="doctors.html">Lékaři & Oddělení</a></li>
-                    <li><a href="reservation.html">Rezervace</a></li>
-                    <li><a href="contact.html" class="active">Kontakt</a></li>
-                </ul>
-            </nav>
-            <form action="search.html" method="get" class="search-box">
-                <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
-                <button type="submit">Hledat</button>
-            </form>
-        </div>
     </header>
+
 
     <main class="container">
         <nav aria-label="Drobečková navigace" class="breadcrumbs">
@@ -126,33 +137,44 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div id="footer-content">
                 <div class="footer-column">
                     <h3>MediCare</h3>
-                    <p>Fiktivní zdravotnické zařízení pro účely výuky.</p>
+                    <p>Moderní poliklinika pro Vaše zdraví.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Rychlé odkazy</h3>
                     <ul>
-                        <li><a href="index.html" style="color: #ccc;">Domů</a></li>
-                        <li><a href="doctors.html" style="color: #ccc;">Lékaři</a></li>
-                        <li><a href="contact.html" style="color: #ccc;">Kontakt</a></li>
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="doctors.html">Lékaři</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Kontakt</h3>
-                    <address style="font-style: normal;">
-                        Ulice Studentská 123<br>
-                        123 00 Praha<br>
-                        Email: info@medicare-student.cz
+                    <address>
+                        Ul. Studentská 123/12
+                        <br>
+                        123 00, Praha
+                        <br>
+                        Email: <a href="mailto:info@medicare.cz">info@medicare.cz</a>
                     </address>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 MediCare. Studentský projekt.</p>
+                <p>
+                    &copy; 2025 MediCare (FIKTIVNÍ PROJEKT!!!).
+                    <br>
+                    Autoři:
+                    <ul>
+                        <li>Sagymbayev Asset</li>
+                        <li>Budnikov Artur</li>
+                        <li>Nesveldin Vladislav</li>
+                        <li>Brot German</li>
+                    </ul>
+                </p>
             </div>
         </div>
     </footer>
 </body>
 </html>
-
