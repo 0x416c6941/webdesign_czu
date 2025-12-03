@@ -7,13 +7,14 @@
     --color-warning: #e63946;           /* "#student-project-notice". */
     --color-header-top: #023e8a;        /* "#header-top". */
     --color-white: #ffffff;             /* For dark mode. */
-    --color-primary: #0077b6;           /* "#nav-logo", "a", ... */
+    --color-primary: #0076b698;           /* "#nav-logo", "a", ... */
     --color-primary-hover: #023e8a;     /* "a:hover". */
-    --color-button: #0077b6;            /* "#search-box button". */
+    --color-button: #0076b698;            /* "#search-box button". */
     --color-secondary: #48cae4;         /* Footer, legend, links in dark mode. */
     --color-accent: #4d8d99;            /* Focus on tab key and hovered links in dark mode. */
-    --color-appointment-bg: #235863;    /* "#cta-button" (to tweak dark mode). */
+    --color-appointment-bg: #1977aa;    /* "#cta-button" (to tweak dark mode). */
     --color-success: #2a9d8f;
+    
 
     /* Spacing. */
     --spacing-xs: 0.25rem;
@@ -224,9 +225,9 @@ body > header {
     width: 100%;
     height: 100%;
 
-    background: url('Assets/logo.png') center/cover no-repeat;
+    background: url('Assets/logo_mb.png') center/cover no-repeat;
     filter: blur(3px) brightness(0.3);
-    transform: scale(1.25);
+    transform: scale(1.15);
     /* Ensuring the layer goes under the text. */
     z-index: -10;
 }
@@ -243,7 +244,7 @@ body > header {
 
     background-color: var(--color-appointment-bg);
     color: var(--color-white);
-    font-weight: bold;
+    font-weight: 600;
 
     border-radius: var(--border-radius);
     padding: var(--spacing-md) var(--spacing-lg);
@@ -439,7 +440,7 @@ footer {
      * Well... It could look better, but it's not our fault,
      * rather it's a limitation of the image generator in Google Gemini. */
     #hero::before {
-        background: url('Assets/logo_desktop.png') center/cover no-repeat;
+        background: url('Assets/logo_alternative_dp.png') center/cover no-repeat;
         filter: blur(5px) brightness(0.3);
         transform: scale(1.05);
     }
@@ -774,7 +775,7 @@ input[type="checkbox"], input[type="radio"] {
         --color-bg: #121212;
         --color-white: #e2e2e2;
         --color-primary: #44b7cf;           /* Lighter blue for dark mode. */
-        --color-button: #0077b6;
+        --color-button: #44b7cf;
         --color-appointment-bg: #3597ab;
     }
 
@@ -786,7 +787,7 @@ input[type="checkbox"], input[type="radio"] {
     #cta-button:hover {
         /* The effect of color changing on hover
          * doesn't look good on dark theme. */
-        background-color: var(--color-appointment-bg);
+        background-color: #205d69 !important;
     }
 
     /* Backgrounds for cards and containers */
