@@ -36,53 +36,65 @@
                     </ul>
                 </nav>
                 <form id="search-box" method="get" action="search.html">
-                    <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
-                    <button type="submit">🔍</button>
+                    <input type="text" placeholder="Hledat...">
+                    <button type="submit">
+                        <!-- Everything is in pixels. -->
+                        <svg width="18" height="18" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="22" y1="22" x2="17" y2="17"></line>
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <nav aria-label="Drobečková navigace" class="breadcrumbs">
+        <nav class="breadcrumbs">
             <ul>
                 <li><a href="index.html">Domů</a></li>
                 <li>Rezervace návštěvy</li>
             </ul>
         </nav>
 
-        <section style="max-width: 800px; margin: 0 auto;">
+        <section id="reservation">
             <h1>Rezervace návštěvy</h1>
-            <p style="margin-bottom: 2rem;">Vyplňte prosím formulář níže pro objednání vyšetření. Budeme vás kontaktovat pro potvrzení termínu.</p>
-
-            <form action="#" method="post" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--box-shadow); margin-bottom: 4rem;">
-                
-                <fieldset style="border: none; margin-bottom: 2rem;">
-                    <legend style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; border-bottom: 2px solid var(--color-secondary); width: 100%; padding-bottom: 0.5rem;">1. Výběr oddělení a termínu</legend>
-                    
+            <p>
+                Vyplňte prosím formulář níže pro objednání vyšetření.
+                Budeme vás kontaktovat pro potvrzení termínu.
+            </p>
+            <!-- Using `method="post" action="#"` to "simulate"
+                 sending a form with POST to the backend. -->
+            <form method="post" action="#">
+                <fieldset>
+                    <legend>1. Výběr oddělení a termínu</legend>
                     <div class="form-group">
                         <label for="department">Oddělení *</label>
                         <select id="department" name="department" required>
                             <option value="">-- Vyberte oddělení --</option>
-                            <option value="kardiologie">Kardiologie</option>
+                            <option value="general_practitioner">Všeobecné praktické lékařství</option>
+                            <option value="cardiology_and_internal_medicine">Kardiologie a interní medicína</option>
+                            <option value="orthopedics_and_raumatology">Ortopedie a traumatologie</option>
+                            <option value="stomatology">Stomatologie</option>
+                            <option value="diagnostics">Diagnostické centrum</option>
+                            <option value="gynekology">Gynekologie</option>
+                            <option value="dermatology_and_esthetics">Dermatologie a estetika</option>
                             <option value="neurologie">Neurologie</option>
-                            <option value="ortopedie">Ortopedie</option>
-                            <option value="pediatrie">Pediatrie</option>
-                            <option value="rehabilitace">Rehabilitace</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="doctor">Preferovaný lékař (volitelné)</label>
                         <select id="doctor" name="doctor">
+                            <!-- From the DB point of view, we should've used
+                                 some DB as a value instead of surname.
+                                 However we, well, don't have any DB or backend at all. -->
                             <option value="">-- Kdokoliv --</option>
-                            <option value="novak">MUDr. Jan Novák</option>
-                            <option value="svobodova">MUDr. Eva Svobodová</option>
-                            <option value="dvorak">MUDr. Petr Dvořák</option>
+                            <option value="sykora">MUDr. Jakub Sýkora</option>
+                            <option value="valentova">MUDr. Klára Valentová</option>
+                            <option value="kral">MUDr. David Král</option>
                         </select>
                     </div>
-
-                    <div class="form-group form-grid-2">
+                    <div class="form-group form-grid">
                         <div>
                             <label for="date">Preferované datum *</label>
                             <input type="date" id="date" name="date" required>
@@ -99,10 +111,9 @@
                     </div>
                 </fieldset>
 
-                <fieldset style="border: none; margin-bottom: 2rem;">
-                    <legend style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; border-bottom: 2px solid var(--color-secondary); width: 100%; padding-bottom: 0.5rem;">2. Osobní údaje</legend>
-                    
-                    <div class="form-group form-grid-2">
+                <fieldset>
+                    <legend>2. Osobní údaje</legend>
+                    <div class="form-group form-grid">
                         <div>
                             <label for="firstname">Jméno *</label>
                             <input type="text" id="firstname" name="firstname" required>
@@ -112,8 +123,7 @@
                             <input type="text" id="lastname" name="lastname" required>
                         </div>
                     </div>
-
-                    <div class="form-group form-grid-2">
+                    <div class="form-group form-grid">
                         <div>
                             <label for="birthdate">Datum narození *</label>
                             <input type="date" id="birthdate" name="birthdate" required>
@@ -125,30 +135,28 @@
                                 <option value="201">201 - VoZP</option>
                                 <option value="205">205 - ČPZP</option>
                                 <option value="207">207 - OZP</option>
+                                <option value="209">209 - ZPŠ</option>
                                 <option value="211">211 - ZPMV</option>
+                                <option value="999">999 (fiktivní) - ostatní (nesmluvní, samoplátce)</option>
                             </select>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="email">Email *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-
                     <div class="form-group">
                         <label for="phone">Telefon *</label>
                         <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789" required>
                     </div>
                 </fieldset>
 
-                <fieldset style="border: none;">
-                    <legend style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; border-bottom: 2px solid var(--color-secondary); width: 100%; padding-bottom: 0.5rem;">3. Důvod návštěvy</legend>
-                    
+                <fieldset>
+                    <legend>3. Důvod návštěvy</legend>
                     <div class="form-group">
                         <label for="reason">Popis problému *</label>
                         <textarea id="reason" name="reason" rows="4" placeholder="Stručně popište vaše zdravotní potíže..." required></textarea>
                     </div>
-
                     <div class="form-group">
                         <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal;">
                             <input type="checkbox" name="consent" required style="width: auto;">
@@ -157,10 +165,9 @@
                     </div>
                 </fieldset>
 
-                <div style="margin-top: 2rem; text-align: right;">
-                    <button type="submit" class="cta-button" style="border: none; cursor: pointer; font-size: 1.1rem;">Odeslat žádost o rezervaci</button>
+                <div id="reservation-button-container">
+                    <button type="submit" id="cta-button">Odeslat žádost o rezervaci</button>
                 </div>
-
             </form>
         </section>
     </main>
