@@ -7,14 +7,12 @@
     --color-warning: #e63946;           /* "#student-project-notice". */
     --color-header-top: #023e8a;        /* "#header-top". */
     --color-white: #ffffff;             /* For dark mode. */
-    --color-primary: #0076b698;           /* "#nav-logo", "a", ... */
+    --color-primary: #0077b6;           /* "#nav-logo", "a", ... */
     --color-primary-hover: #023e8a;     /* "a:hover". */
-    --color-button: #0076b698;            /* "#search-box button". */
-    --color-secondary: #48cae4;         /* Footer, legend, links in dark mode. */
-    --color-accent: #4d8d99;            /* Focus on tab key and hovered links in dark mode. */
+    --color-secondary: #48cae4;         /* Primarily for footer, legend and links in dark mode. */
+    --color-accent: #4d8d99;            /* Focus on tab key and hovered links. */
     --color-appointment-bg: #1977aa;    /* "#cta-button" (to tweak dark mode). */
     --color-success: #2a9d8f;
-    
 
     /* Spacing. */
     --spacing-xs: 0.25rem;
@@ -188,7 +186,9 @@ body > header {
 }
 
 #search-box button {
-    background-color: var(--color-button);
+    background-color: var(--color-primary);
+    /* Not used, since we don't have text in the button, only SVG.
+     * See "stroke" in "#search-box button svg". */
     color: var(--color-white);
 
     padding: var(--spacing-sm) var(--spacing-sm);
@@ -197,6 +197,22 @@ body > header {
 
     /* "cursor: unset;" would also look good. */
     cursor: pointer;
+}
+
+#search-box button svg {
+    /* To prevent figure's insides from being filled. */
+    fill: none;
+
+    stroke: var(--color-white);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: transform var(--transition-transform-time);
+}
+
+#search-box button:hover svg {
+    transform: scale(1.1);
 }
 
 /* -------- Hero section. -------- */
@@ -225,7 +241,7 @@ body > header {
     width: 100%;
     height: 100%;
 
-    background: url('Assets/logo_mb.png') center/cover no-repeat;
+    background: url('Assets/logo.png') center/cover no-repeat;
     filter: blur(3px) brightness(0.3);
     transform: scale(1.15);
     /* Ensuring the layer goes under the text. */
@@ -255,10 +271,13 @@ body > header {
 
 #cta-button:hover {
     background-color: var(--color-primary);
-    color: var(--color-white);
 }
 
 /* -------- Misc. stuff. -------- */
+ul {
+    list-style: none;
+}
+
 img {
     display: block;
 
@@ -278,15 +297,10 @@ a:hover {
 }
 /* END OF TODO. */
 
-ul {
-    list-style: none;
-}
-
 /* -------- Introduction section (home page). -------- */
 #introduction {
     margin: 2rem 0;
 }
-
 
 /* -------- Departments section  (home page). -------- */
 #departments {
@@ -440,7 +454,7 @@ footer {
      * Well... It could look better, but it's not our fault,
      * rather it's a limitation of the image generator in Google Gemini. */
     #hero::before {
-        background: url('Assets/logo_alternative_dp.png') center/cover no-repeat;
+        background: url('Assets/logo_desktop.png') center/cover no-repeat;
         filter: blur(5px) brightness(0.3);
         transform: scale(1.05);
     }
@@ -771,17 +785,22 @@ input[type="checkbox"], input[type="radio"] {
 @media (prefers-color-scheme: dark) {
     :root {
         /* Colors. */
-        --color-text-main: #f0f0f0;
         --color-bg: #121212;
+        --color-bg-alt: #1e1e1e;
+        --color-text-main: #f0f0f0;
         --color-white: #e2e2e2;
         --color-primary: #44b7cf;           /* Lighter blue for dark mode. */
-        --color-button: #44b7cf;
+        --color-button: #2a2a2a;
         --color-appointment-bg: #3597ab;
     }
 
     body {
-        background-color: #121212;
+        background-color: var(--color-bg);
         color: var(--color-text-main);
+    }
+
+    #search-box button {
+        background-color: var(--color-button);
     }
 
     #cta-button:hover {

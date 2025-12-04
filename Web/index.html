@@ -36,8 +36,14 @@
                     </ul>
                 </nav>
                 <form id="search-box" method="get" action="search.html">
-                    <input type="text" name="q" placeholder="Hledat..." aria-label="Vyhledávání">
-                    <button type="submit">🔍</button>
+                    <input type="text" placeholder="Hledat...">
+                    <button type="submit">
+                        <!-- Everything is in pixels. -->
+                        <svg width="18" height="18" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="17" y2="17"></line>
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
