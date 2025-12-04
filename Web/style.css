@@ -1,17 +1,19 @@
+/* -------- Variables. -------- */
 :root {
     /* Colors.
      * Yes, CSS does provide it's own colors, but they're ugly :( */
-    --color-bg: #f8f9fa;                /* Base background color. */
-    --color-text-main: #333333;         /* Base foreground (text) color. */
-    --color-text-light: #929292;        /* Breadcrumbs-related. */
-    --color-warning: #e63946;           /* "#student-project-notice". */
-    --color-header-top: #023e8a;        /* "#header-top". */
-    --color-white: #ffffff;             /* For dark mode. */
-    --color-primary: #0077b6;           /* "#nav-logo", "a", ... */
-    --color-primary-hover: #023e8a;     /* "a:hover". */
-    --color-secondary: #48cae4;         /* Primarily for footer, legend and links in dark mode. */
-    --color-accent: #4d8d99;            /* Focus on tab key and hovered links. */
-    --color-appointment-bg: #1977aa;    /* "#cta-button" (to tweak dark mode). */
+    --color-bg: #f8f9fa;                    /* Base background color. */
+    --color-text-main: #333333;             /* Base foreground (text) color. */
+    --color-text-light: #929292;            /* Breadcrumbs-related. */
+    --color-warning: #e63946;               /* "#student-project-notice". */
+    --color-header-top: #023e8a;            /* "#header-top". */
+    --color-white: #ffffff;                 /* For dark mode. */
+    --color-primary: #0077b6;               /* "#nav-logo", "a", ... */
+    --color-primary-hover: #023e8a;         /* "a:hover". */
+    --color-secondary: #48cae4;             /* Primarily for footer, legend and links in dark mode. */
+    --color-accent: #4d8d99;                /* Focus on tab key and hovered links. */
+    --color-appointment-bg: #1977aa;        /* "#cta-button". */
+    --color-appointment-bg-hover: #007fc4;  /* "#cta-button:hover". */
     --color-success: #2a9d8f;
 
     /* Spacing. */
@@ -42,6 +44,7 @@
     --transition-shadow-time: 0.2s;
 }
 
+/* -------- Sane (in terms of looks and accessbility) defaults and utils. -------- */
 /* Make margins and paddings predictable by default
  * by, well, not having any at all :p */
 * {
@@ -81,6 +84,31 @@ body {
 
     content: "";                    /* Required for some browsers. */
     margin-top: var(--spacing-md);
+}
+
+/* Default selector for hyperlinks.
+ * Gets overridden by more important rules, e.g. "#nav-main a". */
+a {
+    color: var(--color-primary);
+    /* Underscore is ugly. */
+    text-decoration: none;
+
+    transition: color var(--transition-color-time);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
 }
 
 /* Purely a layout container to add padding on left and right. */
@@ -270,32 +298,8 @@ body > header {
 }
 
 #cta-button:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-appointment-bg-hover);
 }
-
-/* -------- Misc. stuff. -------- */
-ul {
-    list-style: none;
-}
-
-img {
-    display: block;
-
-    max-width: 100%;
-    height: auto;
-}
-
-/* TODO: yo, check which elements actually satisfy these selectors. */
-a {
-    text-decoration: none;
-    color: var(--color-primary);
-    transition: color var(--transition-color-time);
-}
-
-a:hover {
-    color: var(--color-primary-dark);
-}
-/* END OF TODO. */
 
 /* -------- Introduction section (home page). -------- */
 #introduction {
@@ -590,8 +594,6 @@ footer {
     border-radius: var(--border-radius);
 }
 
-
-
 /* Forms */
 .form-group {
     margin-bottom: var(--spacing-md);
@@ -790,8 +792,7 @@ input[type="checkbox"], input[type="radio"] {
         --color-text-main: #f0f0f0;
         --color-white: #e2e2e2;
         --color-primary: #44b7cf;           /* Lighter blue for dark mode. */
-        --color-button: #2a2a2a;
-        --color-appointment-bg: #3597ab;
+        --color-button: #2a2a2a;            /* "#search-box button". */
     }
 
     body {
@@ -801,12 +802,6 @@ input[type="checkbox"], input[type="radio"] {
 
     #search-box button {
         background-color: var(--color-button);
-    }
-
-    #cta-button:hover {
-        /* The effect of color changing on hover
-         * doesn't look good on dark theme. */
-        background-color: #205d69 !important;
     }
 
     /* Backgrounds for cards and containers */
