@@ -638,13 +638,13 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     /* ------------------------------ TODO. ------------------------------ */
     .detail-grid {
         grid-template-columns: 1fr 2fr;
-    }
-
-    .form-grid-2 {
-        grid-template-columns: 1fr 1fr;
     }
 
     /* Contact Page Layout */
