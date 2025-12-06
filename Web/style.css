@@ -128,9 +128,9 @@ textarea {
     width: 100%;
     max-width: 1200px;
 
-    /* margin: <top-bottom> <left-right>. */
+    /* margin: <top> <right> <bottom> <left>. */
     margin: 0 auto;
-    /* Same story: padding: <top-bottom> <left-right>. */
+    /* Same story: padding: <top> <right> <bottom> <left>. */
     padding: 0 var(--spacing-md);
 }
 
@@ -479,6 +479,12 @@ footer {
 .breadcrumbs {
     background-color: #f0f0f0;
 
+    /* Alternative, that also looks decent:
+    margin-bottom: var(--spacing-sm) var(--spacing-lg) 0 0;
+    border-radius: var(--border-radius);
+    border-bottom: 1px solid #e0e0e0;
+    padding: var(--spacing-md);
+     */
     margin-bottom: var(--spacing-lg);
     border-bottom: 1px solid #e0e0e0;
     padding: var(--spacing-md);
@@ -631,7 +637,6 @@ footer {
         grid-column: span 2;
         grid-row: span 2;
         background-color: var(--color-primary-light);
-
     }
 
     #news-container {
@@ -845,8 +850,8 @@ input[type="checkbox"], input[type="radio"] {
         --color-bg-alt: #1e1e1e;
         --color-text-main: #f0f0f0;
         --color-white: #e2e2e2;
-        --color-primary: #44b7cf;           /* Lighter blue for dark mode. */
-        --color-button: #2a2a2a;            /* "#search-box button". */
+        --color-primary: #44b7cf;   /* Lighter blue for dark mode. */
+        --color-button: #2a2a2a;    /* "#search-box button". */
     }
 
     body {
